@@ -1,0 +1,34 @@
+.footHolder {
+    width: 100%;
+    height: 9vh;
+    background: rgb(251, 252, 251);
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    border-top: 1px solid grey;
+    font-family:"Poppins", sans-serif
+}
+
+.footInner {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.holdHome, .holdHeart, .holdOrders{
+    width: 15%;
+    height: 100%;
+    /* background: gray; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 600;
+    gap: 2px;
+}
