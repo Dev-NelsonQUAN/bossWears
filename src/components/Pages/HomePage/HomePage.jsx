@@ -4,7 +4,11 @@ import "./HomePage.css"
 const HomePage = () => {
   return (
     <div className='homeHold'>
-        hello
+      <div className="carocelWrapperBox">
+        <div className='homePageCard'>
+          hello
+        </div>
+      </div>
     </div>
   )
 }
