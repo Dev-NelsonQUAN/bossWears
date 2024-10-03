@@ -3,8 +3,11 @@ import "./Footer.css";
 import { GoHome } from "react-icons/go";
 import { RiHeartAddLine } from "react-icons/ri";
 import { BsHandbag } from "react-icons/bs";
+import { useNavigate } from "react-router";
 
 const Footer = () => {
+    const Nav = useNavigate()
+
   return (
     <div className="footHolder">
       <div className="footInner">
@@ -13,7 +16,7 @@ const Footer = () => {
           <p className="home"> Home </p>
         </div>
 
-        <div className="holdHeart">
+        <div className="holdHeart" onClick={() => Nav("/details")}>
           <RiHeartAddLine size={26} />
           <p className="wishList"> Wishlist </p>
         </div>

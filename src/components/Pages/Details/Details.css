@@ -1,0 +1,150 @@
+.detailsHolder {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background: white;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.detailsHeader {
+    width: 100%;
+    height: 10vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    bottom: 0px;
+    border-bottom: 1px solid grey;
+}
+
+.detailsInner {
+  width: 98%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: #cc3f3f; */
+  position: relative;
+  /* gap: 10px; */
+}
+
+.arrowLeft {
+  margin-left: 5px;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 2px;
+}
+
+.pDetails {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.detailsMid {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* background: crimson; */
+}
+
+.dMidTop {
+    width: 100;
+    height: 30vh;
+    /* background: #000; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ImgHold {
+    width: 95%;
+    height: 90%;
+
+}
+
+.dMidBottom {
+    width: 100%;
+    height: auto;
+    min-height: 40vh;
+    /* background: teal; */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.holdHeadTxt{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.footName{
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.footiesPrice {
+    color: orangered;
+    
+}
+
+.holdBottomTxt {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.descPro {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.desc {
+    font-size: 1rem;
+}
+
+.detailsFooter {
+ width: 100%;
+ height: 12vh;
+ /* background: darkorange; */
+ position: fixed;
+ bottom: 0px;
+ left: 0px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.detailsFooterInner {
+    width: 90%;
+    height: 100%;
+    /* background: teal; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.addBtn {
+    width: 100%;
+    height: 3rem;
+    background: #3669C9;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    border-radius: 7px;
+
+}
+
