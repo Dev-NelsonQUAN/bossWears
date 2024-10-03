@@ -1,6 +1,18 @@
 .homeHold {
-    width: 100%;
-    height: auto;
-    min-height: 100vh;
-    background: orangered;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background: rgb(227, 199, 199);
+}
+
+.carocelWrapperBox {
+  height: 200px;
+  background-color: aqua;
+  width: 100%;
+}
+
+.homePageCard {
+  background-color: orange;
+  width: 350px;
+  height: 150px;
 }
