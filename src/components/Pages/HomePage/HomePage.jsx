@@ -6,6 +6,7 @@ import Slippers from "../../../assets/Slippers.svg";
 import sandals from "../../../assets/sandals.svg";  
 import coporate from "../../../assets/coporate.svg";  
 import timberland from "../../../assets/timberland.svg";  
+import orange from "../../../assets/orange.svg";  
 import { GrLinkNext } from "react-icons/gr";
 
 const HomePage = () => {  
@@ -109,6 +110,159 @@ const HomePage = () => {
           </div>
           <div className="heroMainCardTextBox">
             <img src={shoe} alt="" />
+          </div>
+        </div>
+        <div className="categoryBoxhead">
+          <div>Featured Footwears</div>
+          <span>See All</span>
+        </div>
+        <div className="heroPageProductCardWrapper">
+          <div className="ProductCardMain">
+            <div className="productCardImgSec">
+              <img src={orange} alt="" />
+            </div>
+            <div className="productCardTextSec">
+              <div className="productCardProductName">Orange Sneakers</div>
+              <div className="productCardProductAmount">₦59,000.00</div>
+              <button className="addToCartBtn">Add to cart</button>
+            </div>
+          </div>
+          <div className="ProductCardMain">
+            <div className="productCardImgSec">
+              <img src={orange} alt="" />
+            </div>
+            <div className="productCardTextSec">
+              <div className="productCardProductName">Orange Sneakers</div>
+              <div className="productCardProductAmount">₦59,000.00</div>
+              <button className="addToCartBtn">Add to cart</button>
+            </div>
+          </div>
+          <div className="ProductCardMain">
+            <div className="productCardImgSec">
+              <img src={orange} alt="" />
+            </div>
+            <div className="productCardTextSec">
+              <div className="productCardProductName">Orange Sneakers</div>
+              <div className="productCardProductAmount">₦59,000.00</div>
+              <button className="addToCartBtn">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div className="categoryBoxhead">
+          <div>New Arrivals</div>
+          <span>See All</span>
+        </div>
+        <div className="heroPageProductCardWrapper">
+          <div className="ProductCardMain">
+            <div className="productCardImgSec">
+              <img src={orange} alt="" />
+            </div>
+            <div className="productCardTextSec">
+              <div className="productCardProductName">Orange Sneakers</div>
+              <div className="productCardProductAmount">₦59,000.00</div>
+              <button className="addToCartBtn">Add to cart</button>
+            </div>
+          </div>
+          <div className="ProductCardMain">
+            <div className="productCardImgSec">
+              <img src={orange} alt="" />
+            </div>
+            <div className="productCardTextSec">
+              <div className="productCardProductName">Orange Sneakers</div>
+              <div className="productCardProductAmount">₦59,000.00</div>
+              <button className="addToCartBtn">Add to cart</button>
+            </div>
+          </div>
+          <div className="ProductCardMain">
+            <div className="productCardImgSec">
+              <img src={orange} alt="" />
+            </div>
+            <div className="productCardTextSec">
+              <div className="productCardProductName">Orange Sneakers</div>
+              <div className="productCardProductAmount">₦59,000.00</div>
+              <button className="addToCartBtn">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div style={{backgroundColor:"#EC3328"}} className="heroMainShowCard">
+          <div className="heroMainCardTextBox card">
+            <h3>Airforce 1 Nike shoe</h3>
+            <p>Shop now  <GrLinkNext color="white"/></p>
+          </div>
+          <div className="heroMainCardTextBox">
+            <img src={shoe} alt="" />
+          </div>
+        </div>
+        <div className="categoryBoxhead">
+          <div>Top Rated Product</div>
+          <span>See All</span>
+        </div>
+        <div className="heroPageProductCardWrapper">
+          <div className="ProductCardMain">
+            <div className="productCardImgSec">
+              <img src={orange} alt="" />
+            </div>
+            <div className="productCardTextSec">
+              <div className="productCardProductName">Orange Sneakers</div>
+              <div className="productCardProductAmount">₦59,000.00</div>
+              <button className="addToCartBtn">Add to cart</button>
+            </div>
+          </div>
+          <div className="ProductCardMain">
+            <div className="productCardImgSec">
+              <img src={orange} alt="" />
+            </div>
+            <div className="productCardTextSec">
+              <div className="productCardProductName">Orange Sneakers</div>
+              <div className="productCardProductAmount">₦59,000.00</div>
+              <button className="addToCartBtn">Add to cart</button>
+            </div>
+          </div>
+          <div className="ProductCardMain">
+            <div className="productCardImgSec">
+              <img src={orange} alt="" />
+            </div>
+            <div className="productCardTextSec">
+              <div className="productCardProductName">Orange Sneakers</div>
+              <div className="productCardProductAmount">₦59,000.00</div>
+              <button className="addToCartBtn">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div className="categoryBoxhead">
+          <div>Special Offers</div>
+          <span>See All</span>
+        </div>
+        <div className="heroPageProductCardWrapper">
+          <div className="ProductCardMain">
+            <div className="productCardImgSec">
+              <img src={orange} alt="" />
+            </div>
+            <div className="productCardTextSec">
+              <div className="productCardProductName">Orange Sneakers</div>
+              <div className="productCardProductAmount">₦59,000.00</div>
+              <button className="addToCartBtn">Add to cart</button>
+            </div>
+          </div>
+          <div className="ProductCardMain">
+            <div className="productCardImgSec">
+              <img src={orange} alt="" />
+            </div>
+            <div className="productCardTextSec">
+              <div className="productCardProductName">Orange Sneakers</div>
+              <div className="productCardProductAmount">₦59,000.00</div>
+              <button className="addToCartBtn">Add to cart</button>
+            </div>
+          </div>
+          <div className="ProductCardMain">
+            <div className="productCardImgSec">
+              <img src={orange} alt="" />
+            </div>
+            <div className="productCardTextSec">
+              <div className="productCardProductName">Orange Sneakers</div>
+              <div className="productCardProductAmount">₦59,000.00</div>
+              <button className="addToCartBtn">Add to cart</button>
+            </div>
           </div>
         </div>
       </div>
