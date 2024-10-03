@@ -2,17 +2,124 @@
   width: 100%;
   height: auto;
   min-height: 100vh;
-  background: rgb(227, 199, 199);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgb(255, 255, 255);
 }
 
 .carocelWrapperBox {
-  height: 200px;
-  background-color: aqua;
+  height: 230px;
   width: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  padding: 30px;
+  /* overflow-x: scroll; */
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
 }
 
 .homePageCard {
-  background-color: orange;
-  width: 350px;
+  background-color: #F84B41;
+  min-width: 320px;
+  width: 320px;
+  display: flex;
+  /* position: absolute; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
   height: 150px;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out; /* Smooth translation */  
+
+}
+
+.homePageCardTextSec {
+  background-color: #FFE8E7;
+  width: 60%;
+  border-radius: 10px 80px 80px 10px;
+  display: flex;
+  justify-content: center;
+  padding-left: 20px;
+  /* align-items: center; */
+  gap: 10px;
+  flex-direction: column;
+
+  h3 {
+    line-height: 30px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+}
+
+.homePageCardPicSec {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categoryBoxWrapper {
+  height: max-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  font-family: "poppins", "sans-serif";
+}
+
+.categoryBoxhead {
+  height: 30px;
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    font-weight: 300;
+  }
+
+  span {
+    color: #3669C9;
+  }
+}
+
+.categorySecBoxBody {
+  height: max-content;
+  /* background-color: yellow; */
+  overflow: scroll;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  gap: 20px;
+}
+
+.homePageCategoryMainBox {
+  /* background-color: aqua; */
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  span {
+    height: max-content;
+    /* background-color: green; */
+  }
+}
+
+.homePageCategoryLittleBox {
+  border-radius: 10px;
+  background-color: #E4F3EA;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
