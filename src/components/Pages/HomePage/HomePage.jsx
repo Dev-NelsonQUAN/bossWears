@@ -8,6 +8,7 @@ import coporate from "../../../assets/coporate.svg";
 import timberland from "../../../assets/timberland.svg";  
 import orange from "../../../assets/orange.svg";  
 import { GrLinkNext } from "react-icons/gr";
+import { BsCart4 } from "react-icons/bs";
 
 const HomePage = () => {  
   const cards = [  
@@ -124,7 +125,7 @@ const HomePage = () => {
             <div className="productCardTextSec">
               <div className="productCardProductName">Orange Sneakers</div>
               <div className="productCardProductAmount">₦59,000.00</div>
-              <button className="addToCartBtn">Add to cart</button>
+              <button className="addToCartBtn"> <BsCart4 size={20} /> Add to cart</button>
             </div>
           </div>
           <div className="ProductCardMain">
@@ -134,7 +135,7 @@ const HomePage = () => {
             <div className="productCardTextSec">
               <div className="productCardProductName">Orange Sneakers</div>
               <div className="productCardProductAmount">₦59,000.00</div>
-              <button className="addToCartBtn">Add to cart</button>
+              <button className="addToCartBtn"> <BsCart4 size={20} /> Add to cart</button>
             </div>
           </div>
           <div className="ProductCardMain">
@@ -144,7 +145,7 @@ const HomePage = () => {
             <div className="productCardTextSec">
               <div className="productCardProductName">Orange Sneakers</div>
               <div className="productCardProductAmount">₦59,000.00</div>
-              <button className="addToCartBtn">Add to cart</button>
+              <button className="addToCartBtn"> <BsCart4 size={20} /> Add to cart</button>
             </div>
           </div>
         </div>
@@ -160,7 +161,7 @@ const HomePage = () => {
             <div className="productCardTextSec">
               <div className="productCardProductName">Orange Sneakers</div>
               <div className="productCardProductAmount">₦59,000.00</div>
-              <button className="addToCartBtn">Add to cart</button>
+              <button className="addToCartBtn"> <BsCart4 size={20} /> Add to cart</button>
             </div>
           </div>
           <div className="ProductCardMain">
@@ -170,7 +171,7 @@ const HomePage = () => {
             <div className="productCardTextSec">
               <div className="productCardProductName">Orange Sneakers</div>
               <div className="productCardProductAmount">₦59,000.00</div>
-              <button className="addToCartBtn">Add to cart</button>
+              <button className="addToCartBtn"> <BsCart4 size={20} /> Add to cart</button>
             </div>
           </div>
           <div className="ProductCardMain">
@@ -180,7 +181,7 @@ const HomePage = () => {
             <div className="productCardTextSec">
               <div className="productCardProductName">Orange Sneakers</div>
               <div className="productCardProductAmount">₦59,000.00</div>
-              <button className="addToCartBtn">Add to cart</button>
+              <button className="addToCartBtn"> <BsCart4 size={20} /> Add to cart</button>
             </div>
           </div>
         </div>
@@ -205,7 +206,7 @@ const HomePage = () => {
             <div className="productCardTextSec">
               <div className="productCardProductName">Orange Sneakers</div>
               <div className="productCardProductAmount">₦59,000.00</div>
-              <button className="addToCartBtn">Add to cart</button>
+              <button className="addToCartBtn"> <BsCart4 size={20} /> Add to cart</button>
             </div>
           </div>
           <div className="ProductCardMain">
@@ -215,7 +216,7 @@ const HomePage = () => {
             <div className="productCardTextSec">
               <div className="productCardProductName">Orange Sneakers</div>
               <div className="productCardProductAmount">₦59,000.00</div>
-              <button className="addToCartBtn">Add to cart</button>
+              <button className="addToCartBtn"> <BsCart4 size={20} /> Add to cart</button>
             </div>
           </div>
           <div className="ProductCardMain">
@@ -225,7 +226,7 @@ const HomePage = () => {
             <div className="productCardTextSec">
               <div className="productCardProductName">Orange Sneakers</div>
               <div className="productCardProductAmount">₦59,000.00</div>
-              <button className="addToCartBtn">Add to cart</button>
+              <button className="addToCartBtn"> <BsCart4 size={20} /> Add to cart</button>
             </div>
           </div>
         </div>
@@ -241,7 +242,7 @@ const HomePage = () => {
             <div className="productCardTextSec">
               <div className="productCardProductName">Orange Sneakers</div>
               <div className="productCardProductAmount">₦59,000.00</div>
-              <button className="addToCartBtn">Add to cart</button>
+              <button className="addToCartBtn"> <BsCart4 size={20} /> Add to cart</button>
             </div>
           </div>
           <div className="ProductCardMain">
@@ -251,7 +252,7 @@ const HomePage = () => {
             <div className="productCardTextSec">
               <div className="productCardProductName">Orange Sneakers</div>
               <div className="productCardProductAmount">₦59,000.00</div>
-              <button className="addToCartBtn">Add to cart</button>
+              <button className="addToCartBtn"> <BsCart4 size={20} /> Add to cart</button>
             </div>
           </div>
           <div className="ProductCardMain">
@@ -261,7 +262,7 @@ const HomePage = () => {
             <div className="productCardTextSec">
               <div className="productCardProductName">Orange Sneakers</div>
               <div className="productCardProductAmount">₦59,000.00</div>
-              <button className="addToCartBtn">Add to cart</button>
+              <button className="addToCartBtn"> <BsCart4 size={20} /> Add to cart</button>
             </div>
           </div>
         </div>
