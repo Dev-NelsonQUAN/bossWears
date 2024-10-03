@@ -6,6 +6,7 @@ import Slippers from "../../../assets/Slippers.svg";
 import sandals from "../../../assets/sandals.svg";  
 import coporate from "../../../assets/coporate.svg";  
 import timberland from "../../../assets/timberland.svg";  
+import { GrLinkNext } from "react-icons/gr";
 
 const HomePage = () => {  
   const cards = [  
@@ -93,10 +94,21 @@ const HomePage = () => {
             </span>
           </div>
           <div className="homePageCategoryMainBox">
-            <div className="homePageCategoryLittleBox"></div>
+            <div className="homePageCategoryLittleBox">
+              <img src={timberland} alt="" />
+            </div>
             <span>
               Timberland
             </span>
+          </div>
+        </div>
+        <div className="heroMainShowCard">
+          <div className="heroMainCardTextBox card">
+            <h3>Airforce 1 Nike shoe</h3>
+            <p>Shop now  <GrLinkNext color="white"/></p>
+          </div>
+          <div className="heroMainCardTextBox">
+            <img src={shoe} alt="" />
           </div>
         </div>
       </div>

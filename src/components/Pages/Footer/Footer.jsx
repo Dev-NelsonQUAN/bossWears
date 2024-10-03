@@ -3,12 +3,14 @@ import "./Footer.css";
 import { GoHome } from "react-icons/go";
 import { RiHeartAddLine } from "react-icons/ri";
 import { BsHandbag } from "react-icons/bs";
+import { useNavigate } from "react-router";
 
 const Footer = () => {
+  const navigate = useNavigate()
   return (
     <div className="footHolder">
       <div className="footInner">
-        <div className="holdHome">
+        <div className="holdHome" onClick={()=>navigate('/')}>
           <GoHome size={26} />
           <p className="home"> Home </p>
         </div>

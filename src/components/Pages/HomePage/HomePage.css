@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 100px;
   background-color: rgb(255, 255, 255);
 }
 
@@ -104,6 +105,7 @@
   /* background-color: aqua; */
   text-align: center;
   align-items: center;
+  height: 100px;
   display: flex;
   flex-direction: column;
 
@@ -122,4 +124,46 @@
   justify-content: center;
   align-items: center;
 
+}
+
+.heroMainShowCard {
+  background-color: #0AA86B;
+  height: 200px;
+  width: 100%;
+  display: flex;
+
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.heroMainCardTextBox {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  height: 100%;
+  /* line-height: 0px; */
+  color: white;
+
+  h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #FFFFFF80;
+  }
+}
+
+.card {
+  /* background-color: red; */
+  width: 60%;
+  flex-direction: column;
+  padding: 30px;
+  align-items: normal;
 }
