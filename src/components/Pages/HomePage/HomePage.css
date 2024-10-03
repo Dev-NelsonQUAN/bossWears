@@ -2,17 +2,237 @@
   width: 100%;
   height: auto;
   min-height: 100vh;
-  background: rgb(227, 199, 199);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 100px;
+  background-color: rgb(255, 255, 255);
 }
 
 .carocelWrapperBox {
-  height: 200px;
-  background-color: aqua;
+  height: 230px;
   width: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  padding: 30px;
+  /* overflow-x: scroll; */
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
 }
 
 .homePageCard {
-  background-color: orange;
-  width: 350px;
+  background-color: #F84B41;
+  min-width: 320px;
+  width: 320px;
+  display: flex;
+  /* position: absolute; */
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+
   height: 150px;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out; /* Smooth translation */  
+
+}
+
+.homePageCardTextSec {
+  background-color: #FFE8E7;
+  width: 60%;
+  border-radius: 10px 80px 80px 10px;
+  display: flex;
+  justify-content: center;
+  padding-left: 20px;
+  /* align-items: center; */
+  gap: 10px;
+  flex-direction: column;
+
+  h3 {
+    line-height: 30px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+}
+
+.homePageCardPicSec {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categoryBoxWrapper {
+  height: max-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  font-family: "poppins", "sans-serif";
+}
+
+.categoryBoxhead {
+  height: 30px;
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    font-weight: bold;
+  }
+
+  span {
+    color: #3669C9;
+  }
+}
+
+.categorySecBoxBody {
+  height: max-content;
+  /* background-color: yellow; */
+  overflow: scroll;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  gap: 20px;
+}
+
+.homePageCategoryMainBox {
+  /* background-color: aqua; */
+  text-align: center;
+  align-items: center;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+
+  span {
+    height: max-content;
+    /* background-color: green; */
+  }
+}
+
+.homePageCategoryLittleBox {
+  border-radius: 10px;
+  background-color: #E4F3EA;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.heroMainShowCard {
+  background-color: #0AA86B;
+  height: 150px;
+  width: 100%;
+  display: flex;
+
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.heroMainCardTextBox {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  height: 100%;
+  /* line-height: 0px; */
+  color: white;
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #FFFFFF80;
+  }
+}
+
+.card {
+  /* background-color: red; */
+  width: 60%;
+  flex-direction: column;
+  padding: 30px;
+  align-items: normal;
+}
+
+/* .heroFeaturedHead {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+} */
+
+.heroPageProductCardWrapper {
+  height: max-content;
+  /* background-color: red; */
+  min-height: 100px;
+  display: flex;
+  overflow-x: scroll;
+  padding: 20px;
+  gap: 20px;
+  /* flex-wrap: wrap; */
+}
+
+.ProductCardMain {
+  min-height: 260px;
+  min-width: 170px;
+  width: 170px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.productCardImgSec {
+  height: 60%;
+  /* background-color: lightgray; */
+  background-color: white;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.productCardTextSec {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  /* background-color: tomato; */
+}
+
+.productCardProductName {
+  /* font-weight: bold; */
+}
+
+.productCardProductAmount {
+  color: #FE3A30;
+  font-weight: bold;
+}
+
+.addToCartBtn {
+  color: white;
+  background-color: #2A2A2A;
+  border-radius: 10px;
+  border: none;
+  height: 50px;
 }
