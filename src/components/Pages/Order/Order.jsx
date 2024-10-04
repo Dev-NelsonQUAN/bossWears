@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Order.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router";
+import DetailsModal from "../../Modal/DetailsModal";
 
 const Order = () => {
     const Nav = useNavigate()
+    const [animate, setAnimate] = useState(false)
 
   return (
     <div className="orderHolder">
+      {
+        animate ? <DetailsModal animate={animate} setAnimate={setAnimate}/>: null
+      }
       <div className="orderHeader">
         <div className="orderHeaderInner">
           <IoIosArrowBack
@@ -90,7 +95,7 @@ const Order = () => {
       </div>
 
       <div className="orderFooter">
-        <button className="submitBtn"> Submit </button>
+        <button className="submitBtn" onClick={()=>setAnimate(true)}> Submit </button>
       </div>
     </div>
   );
