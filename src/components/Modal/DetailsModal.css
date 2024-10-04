@@ -1,0 +1,22 @@
+.ConfirmationModalBody {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.47);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+.modalEmptySideBox {
+  height: 40%;
+  width: 100%;
+  /* background-color: aqua; */
+}
+
+.modalContentBody {
+  height: 60%;
+  width: 100%;
+  background-color: white;
+  border-radius: 15px 15px 0 0;
+}
