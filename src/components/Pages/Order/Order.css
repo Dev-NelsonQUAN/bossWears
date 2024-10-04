@@ -1,0 +1,144 @@
+.orderHolder {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  height: auto;
+  background: white;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.orderHeader {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  bottom: 0px;
+  border-bottom: 1px solid grey;
+}
+
+.orderHeaderInner {
+  width: 98%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: #cc3f3f; */
+  position: relative;
+  /* gap: 10px; */
+}
+
+.orderName {
+  font-size: 1.1rem;
+}
+
+.orderbottom {
+  width: 100%;
+  height: auto;
+  min-height: 120vh;
+  /* background: #000; */
+}
+
+.orderTopFill {
+  width: 100%;
+  height: 22vh;
+  /* background: green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.holdtheFill {
+  width: 100%;
+  height: 60%;
+  /* background: rebeccapurple; */
+  text-align: center;
+}
+
+.fillThe {
+    font-size: 1.7rem;
+}
+
+.shipDet {
+    font-weight: 600;
+    padding-left: 20px;
+}
+
+.orderInputs {
+    width: 100%;
+    height: 120vh;
+    /* background: hotpink; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orderInputsInner {
+    width: 90%;
+    height: 95%;
+    /* background: whitesmoke; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nameDiv,
+.addressDiv,
+.phoneNumDiv,
+.nearLandmarkDiv,
+.altLocDiv,
+.altPhoneNumDiv
+ {
+    width: 100%;
+    height: 10%;
+    /* background: salmon; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px
+    /* padding: 5px; */
+}
+
+.name {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.input {
+    width: 100%;
+    height: 65%;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding-left: 8px;
+}
+
+
+.orderFooter {
+  width: 100%;
+  height: 13vh;
+  /* background-color: aqua; */
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.submitBtn {
+  width: 100%;
+  height: 3rem;
+  background: #0c1a30;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  border-radius: 7px;
+}
