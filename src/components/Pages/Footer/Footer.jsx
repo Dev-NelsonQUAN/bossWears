@@ -6,16 +6,18 @@ import { BsHandbag } from "react-icons/bs";
 import { useNavigate } from "react-router";
 
 const Footer = () => {
-  const navigate = useNavigate()
+
+    const Nav = useNavigate()
+
   return (
     <div className="footHolder">
       <div className="footInner">
-        <div className="holdHome" onClick={()=>navigate('/')}>
+        <div className="holdHome" onClick={() => Nav("/")}>
           <GoHome size={26} />
           <p className="home"> Home </p>
         </div>
 
-        <div className="holdHeart">
+        <div className="holdHeart" onClick={() => Nav("/details")}>
           <RiHeartAddLine size={26} />
           <p className="wishList"> Wishlist </p>
         </div>
