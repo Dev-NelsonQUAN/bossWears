@@ -11,16 +11,16 @@
 }
 
 .detailsHeader {
-    width: 100%;
-    height: 10vh;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 0px;
-    bottom: 0px;
-    border-bottom: 1px solid grey;
+  width: 100%;
+  height: 10vh;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  bottom: 0px;
+  border-bottom: 1px solid grey;
 }
 
 .detailsInner {
@@ -47,104 +47,231 @@
 }
 
 .detailsMid {
-    width: 100%;
-    height: auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    /* background: crimson; */
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* background: crimson; */
 }
 
 .dMidTop {
-    width: 100;
-    height: 30vh;
-    /* background: #000; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100;
+  height: 30vh;
+  /* background: #000; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .ImgHold {
-    width: 95%;
-    height: 90%;
-
+  width: 95%;
+  height: 90%;
 }
 
 .dMidBottom {
-    width: 100%;
-    height: auto;
-    min-height: 40vh;
-    /* background: teal; */
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  width: 100%;
+  height: auto;
+  min-height: 40vh;
+  /* background: teal; */
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.holdHeadTxt{
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
+.holdHeadTxt {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
-.footName{
-    font-weight: 600;
-    font-size: 1.3rem;
+.footName {
+  font-weight: 600;
+  font-size: 1.3rem;
 }
 
 .footiesPrice {
-    color: orangered;
-    
+  color: orangered;
 }
 
 .holdBottomTxt {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .descPro {
-    font-weight: 600;
-    font-size: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .desc {
-    font-size: 1rem;
+  font-size: 1rem;
+}
+
+.detailsMidBot {
+  width: 100%;
+  height: 65vh;
+  /* background: orange; */
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.brandHold {
+  width: 100%;
+  height: 18%;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.theB {
+  font-size: 1.2rem;
+}
+
+.quantity {
+  width: 100%;
+  height: 18%;
+  border-bottom: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rQuant {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.holdCount {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add {
+  color: #3669c9;
+  font-size: 1.3rem;
+}
+
+.colorHold {
+  width: 100%;
+  height: 25%;
+  border-bottom: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.colColor {
+  width: 100%;
+}
+
+.holdColorBtn {
+  width: 98%;
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  /* padding-left: 10px;
+    padding-right: 10px; */
+}
+
+.orangeBtn {
+  width: 30%;
+  height: 1.7rem;
+  background: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid grey;
+
+}
+
+.whiteBtn {
+  width: 30%;
+  height: 1.7rem;
+  background: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid grey;
+
+
+}
+
+.blackBtn {
+  width: 30%;
+  height: 1.7rem;
+  background: #f8f8f8;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid grey;
+
+}
+
+.totalP {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.bottomTot {
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.bottomPri {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #3669c9;
 }
 
 .detailsFooter {
- width: 100%;
- height: 12vh;
- /* background: darkorange; */
- position: fixed;
- bottom: 0px;
- left: 0px;
- display: flex;
- justify-content: center;
- align-items: center;
+  width: 100%;
+  height: 12vh;
+  /* background: darkorange; */
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .detailsFooterInner {
-    width: 90%;
-    height: 100%;
-    /* background: teal; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 90%;
+  height: 100%;
+  /* background: teal; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
 
 .addBtn {
-    width: 100%;
-    height: 3rem;
-    background: #3669C9;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    font-weight: 600;
-    color: white;
-    border-radius: 7px;
-
+  width: 100%;
+  height: 3rem;
+  background: #0c1a30;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  border-radius: 7px;
 }
-

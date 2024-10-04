@@ -2,6 +2,7 @@ import React from 'react'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
 import LandingPage from "./components/Pages/LandingPage/LandingPage"
 import Details from './components/Pages/Details/Details'
+import Order from './components/Pages/Order/Order'
 
 const router = createHashRouter([
 
@@ -13,6 +14,10 @@ const router = createHashRouter([
   {
     path:"/details",
     element: <Details/>
+  },
+  {
+    path: "/order",
+    element: <Order/>
   }
 ])
 
