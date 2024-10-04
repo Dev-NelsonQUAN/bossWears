@@ -3,13 +3,19 @@ import "./Details.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoHeart } from "react-icons/io5";
 import ShoePeru from "../../../assets/shoePeru.svg";
+import { useNavigate } from "react-router";
 
 const Details = () => {
+  const Nav = useNavigate();
   return (
     <div className="detailsHolder">
       <div className="detailsHeader">
         <div className="detailsInner">
-          <IoIosArrowBack size="25" className="arrowLeft" />
+          <IoIosArrowBack
+            size="25"
+            className="arrowLeft"
+            onClick={() => Nav("/")}
+          />
 
           <h4 className="pDetails"> Product Details </h4>
         </div>
@@ -37,11 +43,40 @@ const Details = () => {
             </p>
           </div>
         </div>
+
+        <div className="detailsMidBot">
+          <div className="brandHold">
+            <p className="brand"> Brand:</p>
+            <p className="theB">Nike</p>
+          </div>
+          <div className="quantity">
+            <p className="rQuant"> Quantity </p>
+            <div className="holdCount">
+                <p className="sub"> - </p>
+                <p className="count"> 1 </p>
+                <p className="add"> + </p>
+            </div>
+          </div>
+          <div className="colorHold">
+            <p className="colColor"> Color</p>
+            <div className="holdColorBtn">
+                <button className="orangeBtn"> Orange </button>
+                <button className="whiteBtn"> White </button>
+                <button className="blackBtn"> Black </button>
+            </div>
+          </div>
+          <div className="totalP">
+            <p className="bottomTot"> Total </p>
+            <p className="bottomPri"> ₦59,000.00  </p>
+          </div>
+        </div>
       </div>
 
       <div className="detailsFooter">
         <div className="detailsFooterInner">
-          <button className="addBtn"> Add To Cart </button>
+          <button className="addBtn" 
+          onClick={() => Nav("/order")}
+          > Order now </button>
         </div>
       </div>
     </div>
