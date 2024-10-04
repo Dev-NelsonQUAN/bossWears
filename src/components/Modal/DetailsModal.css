@@ -18,5 +18,51 @@
   height: 60%;
   width: 100%;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
   border-radius: 15px 15px 0 0;
+  padding: 20px;
+
+  h3 {
+    text-align: center;
+  }
+
+  p{
+    font-size: 14px;
+    color: gray;
+    text-align: center;
+  }
+}
+
+.modalContentBodyHead {
+  height: 50px;
+  width: 100%;
+  /* background-color: #F84B41; */
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  /* color: white; */
+}
+
+.modalContentCheckImgBox {
+  height: 100px;
+  width: 100%;
+  /* background-color: lightblue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalBackToPageBtn {
+  height: 70px;
+  font-size: 16px;
+  border: none;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #3669C9;
+  color: white;
 }
