@@ -3,6 +3,7 @@ import { createHashRouter, RouterProvider } from 'react-router-dom'
 import LandingPage from "./components/Pages/LandingPage/LandingPage"
 import Details from './components/Pages/Details/Details'
 import Order from './components/Pages/Order/Order'
+import AdminLogin from './components/auth/AdminLogin/AdminLogin'
 
 const router = createHashRouter([
 
@@ -12,13 +13,16 @@ const router = createHashRouter([
     // children: 
   },
   {
+    path: "/admin-login",
+    element: <AdminLogin/>
+  },
+  {
     path:"/details",
     element: <Details/>
   },
   {
     path: "/order",
     element: <Order/>
-    
   }
 ])
 
