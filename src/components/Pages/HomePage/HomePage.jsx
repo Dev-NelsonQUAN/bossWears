@@ -56,12 +56,10 @@ const HomePage = () => {
   ];
 
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState(null);
 
   useEffect(() => {
     // Simulate a data fetching
     setTimeout(() => {
-      setData({ name: "John Doe", age: 30 });
       setLoading(false);
     }, 2000); // 2 seconds loading time
   }, []);
