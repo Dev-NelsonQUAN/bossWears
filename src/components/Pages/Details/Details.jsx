@@ -17,7 +17,7 @@ const Details = () => {
             onClick={() => Nav("/")}
           />
 
-          <h4 className="pDetails"> Product Details </h4>
+          <h4 className="pDetails" onClick={() => Nav("/admin-login")}> Product Details </h4>
         </div>
       </div>
 

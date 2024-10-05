@@ -1,0 +1,126 @@
+.adminLoginHolder {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 12%;
+  font-family: "Poppins";
+  align-items: center;
+}
+
+.adLogBottom {
+  width: 88%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.topTxt {
+  width: 100%;
+  height: 22%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.welcomeAdminText {
+  color: #0c1a30;
+  line-height: 42px;
+  font-size: 1.8rem;
+}
+
+.loginP {
+  color: #0c1a30;
+  font-size: 1.5rem;
+}
+
+.botBot {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.logInputs {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logEmailHold {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logEmail {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.logInput {
+  width: 100%;
+  min-height: 65%;
+  border-radius: 5px;
+  border: 1px solid rgb(15, 15, 15);
+  padding-left: 8px;
+}
+
+.logPasswordHold {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logPassword {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.logInput {
+  width: 100%;
+  min-height: 65%;
+  border-radius: 5px;
+  border: 1px solid rgb(7, 7, 7);
+  padding-left: 8px;
+}
+
+.logBtnATxt {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.fPass {
+  width: 100%;
+  color: red;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.loginB {
+  width: 100%;
+  height: 2.8rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background: #0c1a30;
+  font-weight: 500;
+  color: white;
+  font-size: 1.1rem;
+}
