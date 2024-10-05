@@ -10,6 +10,7 @@ import orange from "../../../assets/orange.svg";
 import { GrLinkNext } from "react-icons/gr";
 import LongerCardLoading from "../../Extra/LongerCardLoading";
 import CardLoading from "../../Extra/CardLoading";
+import { useNavigate } from "react-router";
 
 const HomePage = () => {
   const cards = [
@@ -36,6 +37,24 @@ const HomePage = () => {
     },
   ];
 
+  const product = [
+    {
+      img: "src/assets/orange.svg",
+      name: "orange snaekers",
+      price: "59,000",
+    },
+    {
+      img: "src/assets/orange.svg",
+      name: "white snaekers",
+      price: "44,000",
+    },
+    {
+      img: "src/assets/orange.svg",
+      name: "orange snaekers",
+      price: "30,000",
+    },
+  ];
+
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
 
@@ -44,7 +63,7 @@ const HomePage = () => {
     setTimeout(() => {
       setData({ name: "John Doe", age: 30 });
       setLoading(false);
-    }, 3000); // 2 seconds loading time
+    }, 2000); // 2 seconds loading time
   }, []);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -56,6 +75,8 @@ const HomePage = () => {
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, [cards.length]);
+
+  const nav = useNavigate()
 
   return (
     <div className="homeHold">
@@ -120,21 +141,22 @@ const HomePage = () => {
             <span>Timberland</span>
           </div>
         </div>
-        
-        {
-          loading ? <LongerCardLoading/> :
-        <div className="heroMainShowCard">
-          <div className="heroMainCardTextBox card">
-            <h3>Airforce 1 Nike shoe</h3>
-            <p>
-              Shop now <GrLinkNext color="white" />
-            </p>
+
+        {loading ? (
+          <LongerCardLoading />
+        ) : (
+          <div className="heroMainShowCard">
+            <div className="heroMainCardTextBox card">
+              <h3>Airforce 1 Nike shoe</h3>
+              <p>
+                Shop now <GrLinkNext color="white" />
+              </p>
+            </div>
+            <div className="heroMainCardTextBox">
+              <img src={shoe} alt="" />
+            </div>
           </div>
-          <div className="heroMainCardTextBox">
-            <img src={shoe} alt="" />
-          </div>
-        </div>
-        }
+        )}
 
         <div className="categoryBoxhead">
           <div>Featured Footwears</div>
@@ -149,41 +171,21 @@ const HomePage = () => {
               <CardLoading />
             </>
           ) : (
-            <>
-              <div className="ProductCardMain">
-                <div className="productCardImgSec">
-                  <img src={orange} alt="" />
+            product.map((e, i) => (
+              <div className="ProductCardMain" key={i}>
+                <div className="productCardImgSec" onClick={()=>nav('/details')}>
+                  <img src={e.img} alt="" />
                 </div>
                 <div className="productCardTextSec">
-                  <div className="productCardProductName">Orange Sneakers</div>
-                  <div className="productCardProductAmount">₦59,000.00</div>
+                  <div className="productCardProductName">{e.name}</div>
+                  <div className="productCardProductAmount">₦{e.price}.00</div>
                   <button className="addToCartBtn">Add to cart</button>
                 </div>
               </div>
-
-              <div className="ProductCardMain">
-                <div className="productCardImgSec">
-                  <img src={orange} alt="" />
-                </div>
-                <div className="productCardTextSec">
-                  <div className="productCardProductName">Orange Sneakers</div>
-                  <div className="productCardProductAmount">₦59,000.00</div>
-                  <button className="addToCartBtn">Add to cart</button>
-                </div>
-              </div>
-              <div className="ProductCardMain">
-                <div className="productCardImgSec">
-                  <img src={orange} alt="" />
-                </div>
-                <div className="productCardTextSec">
-                  <div className="productCardProductName">Orange Sneakers</div>
-                  <div className="productCardProductAmount">₦59,000.00</div>
-                  <button className="addToCartBtn">Add to cart</button>
-                </div>
-              </div>
-            </>
+            ))
           )}
         </div>
+
         <div className="categoryBoxhead">
           <div>New Arrivals</div>
           <span>See All</span>
@@ -196,59 +198,39 @@ const HomePage = () => {
               <CardLoading />
             </>
           ) : (
-            <>
-              <div className="ProductCardMain">
-                <div className="productCardImgSec">
-                  <img src={orange} alt="" />
+            product.map((e, i) => (
+              <div className="ProductCardMain" key={i}>
+                <div className="productCardImgSec" onClick={()=>nav('/details')}>
+                  <img src={e.img} alt="" />
                 </div>
                 <div className="productCardTextSec">
-                  <div className="productCardProductName">Orange Sneakers</div>
-                  <div className="productCardProductAmount">₦59,000.00</div>
+                  <div className="productCardProductName">{e.name}</div>
+                  <div className="productCardProductAmount">₦{e.price}.00</div>
                   <button className="addToCartBtn">Add to cart</button>
                 </div>
               </div>
-
-              <div className="ProductCardMain">
-                <div className="productCardImgSec">
-                  <img src={orange} alt="" />
-                </div>
-                <div className="productCardTextSec">
-                  <div className="productCardProductName">Orange Sneakers</div>
-                  <div className="productCardProductAmount">₦59,000.00</div>
-                  <button className="addToCartBtn">Add to cart</button>
-                </div>
-              </div>
-              <div className="ProductCardMain">
-                <div className="productCardImgSec">
-                  <img src={orange} alt="" />
-                </div>
-                <div className="productCardTextSec">
-                  <div className="productCardProductName">Orange Sneakers</div>
-                  <div className="productCardProductAmount">₦59,000.00</div>
-                  <button className="addToCartBtn">Add to cart</button>
-                </div>
-              </div>
-            </>
+            ))
           )}
         </div>
 
-        {
-          loading ? <LongerCardLoading/> :
-        <div
-          style={{ backgroundColor: "#EC3328" }}
-          className="heroMainShowCard"
-        >
-          <div className="heroMainCardTextBox card">
-            <h3>Airforce 1 Nike shoe</h3>
-            <p>
-              Shop now <GrLinkNext color="white" />
-            </p>
+        {loading ? (
+          <LongerCardLoading />
+        ) : (
+          <div
+            style={{ backgroundColor: "#EC3328" }}
+            className="heroMainShowCard"
+          >
+            <div className="heroMainCardTextBox card">
+              <h3>Airforce 1 Nike shoe</h3>
+              <p>
+                Shop now <GrLinkNext color="white" />
+              </p>
+            </div>
+            <div className="heroMainCardTextBox">
+              <img src={shoe} alt="" />
+            </div>
           </div>
-          <div className="heroMainCardTextBox">
-            <img src={shoe} alt="" />
-          </div>
-        </div>
-        }
+        )}
 
         <div className="categoryBoxhead">
           <div>Top Rated Product</div>
@@ -262,39 +244,18 @@ const HomePage = () => {
               <CardLoading />
             </>
           ) : (
-            <>
-              <div className="ProductCardMain">
-                <div className="productCardImgSec">
-                  <img src={orange} alt="" />
+            product.map((e, i) => (
+              <div className="ProductCardMain" key={i}>
+                <div className="productCardImgSec" onClick={()=>nav('/details')}>
+                  <img src={e.img} alt="" />
                 </div>
                 <div className="productCardTextSec">
-                  <div className="productCardProductName">Orange Sneakers</div>
-                  <div className="productCardProductAmount">₦59,000.00</div>
+                  <div className="productCardProductName">{e.name}</div>
+                  <div className="productCardProductAmount">₦{e.price}.00</div>
                   <button className="addToCartBtn">Add to cart</button>
                 </div>
               </div>
-
-              <div className="ProductCardMain">
-                <div className="productCardImgSec">
-                  <img src={orange} alt="" />
-                </div>
-                <div className="productCardTextSec">
-                  <div className="productCardProductName">Orange Sneakers</div>
-                  <div className="productCardProductAmount">₦59,000.00</div>
-                  <button className="addToCartBtn">Add to cart</button>
-                </div>
-              </div>
-              <div className="ProductCardMain">
-                <div className="productCardImgSec">
-                  <img src={orange} alt="" />
-                </div>
-                <div className="productCardTextSec">
-                  <div className="productCardProductName">Orange Sneakers</div>
-                  <div className="productCardProductAmount">₦59,000.00</div>
-                  <button className="addToCartBtn">Add to cart</button>
-                </div>
-              </div>
-            </>
+            ))
           )}
         </div>
         <div className="categoryBoxhead">
@@ -309,39 +270,18 @@ const HomePage = () => {
               <CardLoading />
             </>
           ) : (
-            <>
-              <div className="ProductCardMain">
-                <div className="productCardImgSec">
-                  <img src={orange} alt="" />
+            product.map((e, i) => (
+              <div className="ProductCardMain" key={i}>
+                <div className="productCardImgSec" onClick={()=>nav('/details')}>
+                  <img src={e.img} alt="" />
                 </div>
                 <div className="productCardTextSec">
-                  <div className="productCardProductName">Orange Sneakers</div>
-                  <div className="productCardProductAmount">₦59,000.00</div>
+                  <div className="productCardProductName">{e.name}</div>
+                  <div className="productCardProductAmount">₦{e.price}.00</div>
                   <button className="addToCartBtn">Add to cart</button>
                 </div>
               </div>
-
-              <div className="ProductCardMain">
-                <div className="productCardImgSec">
-                  <img src={orange} alt="" />
-                </div>
-                <div className="productCardTextSec">
-                  <div className="productCardProductName">Orange Sneakers</div>
-                  <div className="productCardProductAmount">₦59,000.00</div>
-                  <button className="addToCartBtn">Add to cart</button>
-                </div>
-              </div>
-              <div className="ProductCardMain">
-                <div className="productCardImgSec">
-                  <img src={orange} alt="" />
-                </div>
-                <div className="productCardTextSec">
-                  <div className="productCardProductName">Orange Sneakers</div>
-                  <div className="productCardProductAmount">₦59,000.00</div>
-                  <button className="addToCartBtn">Add to cart</button>
-                </div>
-              </div>
-            </>
+            ))
           )}
         </div>
       </div>
