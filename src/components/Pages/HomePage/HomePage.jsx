@@ -16,18 +16,21 @@ const HomePage = () => {
       description: "Explore Casual Comfort",  
       text: "For your casual outfits",  
       img: "path_to_your_image.jpg",  
+      color: '#FFE8E7'
     },  
     {  
       title: "Another Card",  
       description: "Explore Stylish Options",  
       text: "For your trendy looks",  
       img: "path_to_your_image2.jpg",  
+      color: '#E5FFF5'
     },  
     {  
       title: "More Choices",  
       description: "Discover New Styles",  
       text: "For every occasion",  
-      img: "path_to_your_image3.jpg",  
+      img: "path_to_your_image3.jpg",
+      color: '#b4ffe2'  
     },  
   ];  
 
@@ -46,7 +49,7 @@ const HomePage = () => {
       <div className="carocelWrapperBox">  
         {cards.map((e, i) => (  
           <div className="homePageCard" key={i} style={{ transform: `translateX(-${currentIndex * 100}%)` }}>  
-            <div className="homePageCardTextSec">  
+            <div className="homePageCardTextSec" style={{backgroundColor: e.color}}>  
               <h3>{e.title}</h3>  
               <p>{e.text}</p>  
             </div>  
