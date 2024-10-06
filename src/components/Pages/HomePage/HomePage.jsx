@@ -11,8 +11,11 @@ import { GrLinkNext } from "react-icons/gr";
 import LongerCardLoading from "../../Extra/LongerCardLoading";
 import CardLoading from "../../Extra/CardLoading";
 import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../../Global/slice";
 
 const HomePage = () => {
+  const dispatch = useDispatch()
   const cards = [
     {
       title: "Explore Casual Comfort",
@@ -42,16 +45,19 @@ const HomePage = () => {
       img: "src/assets/orange.svg",
       name: "orange snaekers",
       price: "59,000",
+      id: 1
     },
     {
-      img: "src/assets/orange.svg",
+      img: "src/assets/cardshoe.svg",
       name: "white snaekers",
       price: "44,000",
+      id: 2
     },
     {
       img: "src/assets/orange.svg",
       name: "orange snaekers",
       price: "30,000",
+      id: 3
     },
   ];
 
@@ -177,7 +183,7 @@ const HomePage = () => {
                 <div className="productCardTextSec">
                   <div className="productCardProductName">{e.name}</div>
                   <div className="productCardProductAmount">₦{e.price}.00</div>
-                  <button className="addToCartBtn">Add to cart</button>
+                  <button className="addToCartBtn" onClick={()=>dispatch(addToCart(e))}>Add to cart</button>
                 </div>
               </div>
             ))
