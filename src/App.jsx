@@ -4,6 +4,7 @@ import LandingPage from "./components/Pages/LandingPage/LandingPage"
 import Details from './components/Pages/Details/Details'
 import Order from './components/Pages/Order/Order'
 import AdminLogin from './components/auth/AdminLogin/AdminLogin'
+import Cart from './components/Pages/Cart/Cart'
 
 const router = createHashRouter([
 
@@ -23,7 +24,11 @@ const router = createHashRouter([
   {
     path: "/order",
     element: <Order/>
-  }
+  },
+  {
+    path: "/cart",
+    element: <Cart/>
+  },
 ])
 
 const App = () => {

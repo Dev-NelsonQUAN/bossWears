@@ -22,7 +22,7 @@ const Footer = () => {
           <p className="wishList"> Wishlist </p>
         </div>
 
-        <div className="holdOrders">
+        <div className="holdOrders" onClick={()=>Nav('/cart')}>
           <BsHandbag size={26} />
           <p className="orders"> Orders </p>
         </div>
