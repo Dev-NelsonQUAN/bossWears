@@ -20,6 +20,28 @@
     align-items: center;
 }
 
+.HeaderActive {
+    border-radius: 4px;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    color: tomato;
+    width: 50px;
+}
+
+.HeaderNotActive {
+    /* position: relative; */
+    border-radius: 4px;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    width: 50px;
+
+}
+
 .holdHome, .holdHeart, .holdOrders{
     width: 15%;
     height: 100%;
@@ -31,4 +53,19 @@
     font-size: 0.6rem;
     font-weight: 600;
     gap: 2px;
+    position: relative;
+
+    > span {
+        background-color: red;
+        display: flex;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 5px;
+        font-size: 12px;
+        left: 10px;
+      }
 }

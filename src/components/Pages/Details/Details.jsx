@@ -3,9 +3,40 @@ import "./Details.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoHeart } from "react-icons/io5";
 import ShoePeru from "../../../assets/shoePeru.svg";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
+import { useDispatch } from "react-redux";
+import { decreaseQty, increaseQty } from "../../../Global/slice";
 
 const Details = () => {
+  const {id} = useParams()
+  const dispatch = useDispatch()
+
+  const product = [
+    {
+      img: "src/assets/orange.svg",
+      name: "orange snaekers",
+      price: 59000,
+      id: 1,
+      Qty: 0
+    },
+    {
+      img: "src/assets/cardshoe.svg",
+      name: "white snaekers",
+      price: 44000,
+      id: 2,
+      Qty: 0
+    },
+    {
+      img: "src/assets/orange.svg",
+      name: "orange snaekers",
+      price: 30000,
+      id: 3,
+      Qty: 0
+    },
+  ];
+  const filter = product.filter(e=>e.id == id)
+  const data = filter[0]
+
   const Nav = useNavigate();
   return (
     <div className="detailsHolder">
@@ -23,13 +54,13 @@ const Details = () => {
 
       <div className="detailsMid">
         <div className="dMidTop">
-          <img src={ShoePeru} alt="" className="ImgHold" />
+          <img src={data.img} alt="" className="ImgHold" />
         </div>
 
         <div className="dMidBottom">
           <div className="holdHeadTxt">
-            <h2 className="footName"> Orange Sneakers </h2>
-            <p className="footiesPrice"> ₦59,000.00 </p>
+            <h2 className="footName">{data.name}</h2>
+            <p className="footiesPrice"> ₦{data.price.toLocaleString()}.00 </p>
           </div>
 
           <div className="holdBottomTxt">
@@ -52,9 +83,9 @@ const Details = () => {
           <div className="quantity">
             <p className="rQuant"> Quantity </p>
             <div className="holdCount">
-                <p className="sub"> - </p>
-                <p className="count"> 1 </p>
-                <p className="add"> + </p>
+                <p className="sub" onClick={()=>dispatch(decreaseQty(data))}> - </p>
+                <p className="count"> {data.Qty} </p>
+                <p className="add" onClick={()=>dispatch(increaseQty(data))}> + </p>
             </div>
           </div>
           <div className="colorHold">
@@ -67,7 +98,7 @@ const Details = () => {
           </div>
           <div className="totalP">
             <p className="bottomTot"> Total </p>
-            <p className="bottomPri"> ₦59,000.00  </p>
+            <p className="bottomPri"> ₦{data.price.toLocaleString()}.00  </p>
           </div>
         </div>
       </div>
