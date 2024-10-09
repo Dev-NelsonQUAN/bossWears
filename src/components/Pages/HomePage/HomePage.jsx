@@ -44,19 +44,19 @@ const HomePage = () => {
     {
       img: "src/assets/orange.svg",
       name: "orange snaekers",
-      price: "59,000",
+      price: 59000,
       id: 1
     },
     {
       img: "src/assets/cardshoe.svg",
       name: "white snaekers",
-      price: "44,000",
+      price: 44000,
       id: 2
     },
     {
       img: "src/assets/orange.svg",
       name: "orange snaekers",
-      price: "30,000",
+      price: 30000,
       id: 3
     },
   ];
@@ -182,7 +182,7 @@ const HomePage = () => {
                 </div>
                 <div className="productCardTextSec">
                   <div className="productCardProductName">{e.name}</div>
-                  <div className="productCardProductAmount">₦{e.price}.00</div>
+                  <div className="productCardProductAmount">₦{e.price.toLocaleString()}.00</div>
                   <button className="addToCartBtn" onClick={()=>dispatch(addToCart(e))}>Add to cart</button>
                 </div>
               </div>
