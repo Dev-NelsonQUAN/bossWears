@@ -58,9 +58,9 @@ const Cart = () => {
             
           </div>
           <div className='cartPayBoxBottom'>
-            <div className='cartPayDetailsBox'>hello</div>
+            <div className='cartPayDetailsBox'>Total : {all}</div>
             <div className='cartPayBtnBox'>
-              <button>Pay ₦{all}.00</button>
+              <button onClick={()=>Nav('/order')}>Order Now</button>
             </div>
           </div>
         </div> 

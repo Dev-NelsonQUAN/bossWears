@@ -4,28 +4,43 @@ import { GoHome } from "react-icons/go";
 import { RiHeartAddLine } from "react-icons/ri";
 import { BsHandbag } from "react-icons/bs";
 import { useNavigate } from "react-router";
+import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
 
     const Nav = useNavigate()
+    const cart = useSelector((state)=>state.shoes.cart.length)
 
   return (
     <div className="footHolder">
       <div className="footInner">
-        <div className="holdHome" onClick={() => Nav("/")}>
-          <GoHome size={26} />
-          <p className="home"> Home </p>
-        </div>
 
-        <div className="holdHeart" onClick={() => Nav("/details")}>
-          <RiHeartAddLine size={26} />
-          <p className="wishList"> Wishlist </p>
-        </div>
+        <NavLink to='/' className={({ isActive }) =>isActive ? "HeaderActive" : "HeaderNotActive"}>
+          <div className="holdHome">
+            <GoHome size={26} />
+            <p className="home"> Home </p>
+          </div>
+        </NavLink>
 
-        <div className="holdOrders" onClick={()=>Nav('/cart')}>
-          <BsHandbag size={26} />
-          <p className="orders"> Orders </p>
-        </div>
+        <NavLink to='/admin-login' className={({ isActive }) =>isActive ? "HeaderActive" : "HeaderNotActive"}>
+          <div className="holdHeart">
+            <RiHeartAddLine size={26} />
+            <p className="wishList"> Wishlist </p>
+          </div>
+        </NavLink>
+
+        <NavLink to='/cart' className={({ isActive }) =>isActive ? "HeaderActive" : "HeaderNotActive"}>
+          <div className="holdOrders">
+            <BsHandbag size={26} />
+            {
+              cart === 0 ? null :
+              <span style={{color: 'white'}}>{cart}</span>
+            }
+            <p className="orders"> Orders </p>
+          </div>
+        </NavLink>
+
       </div>
     </div>
   );

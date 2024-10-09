@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Order.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router";
-import DetailsModal from "../../Modal/DetailsModal";
+import DetailsModal from "../../Modal/DetailsModal/DetailsModal";
 
 const Order = () => {
     const Nav = useNavigate()
@@ -18,7 +18,7 @@ const Order = () => {
           <IoIosArrowBack
             size="25"
             className="arrowLeft"
-            onClick={() => Nav("/details")}
+            onClick={() => Nav(-1)}
           />
 
           <h6 className="orderName">Order Selection</h6>

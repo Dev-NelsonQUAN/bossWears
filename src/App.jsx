@@ -5,6 +5,8 @@ import Details from './components/Pages/Details/Details'
 import Order from './components/Pages/Order/Order'
 import AdminLogin from './components/auth/AdminLogin/AdminLogin'
 import Cart from './components/Pages/Cart/Cart'
+import AdminResetPassword from './components/auth/AdminResetPassword/AdminResetPassword'
+import AdminUpdatePassword from './components/auth/AdminUpdatePassword/AdminUpdatePassword'
 
 const router = createHashRouter([
 
@@ -17,8 +19,16 @@ const router = createHashRouter([
     path: "/admin-login",
     element: <AdminLogin/>
   },
+  // {
+  //   path: "/admin-resetpassword",
+  //   element: <AdminResetPassword/>
+  // },
+  // {
+  //   path: "/admin-updatepassword",
+  //   element: <AdminUpdatePassword/>
+  // },
   {
-    path:"/details",
+    path:"/details/:id",
     element: <Details/>
   },
   {

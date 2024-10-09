@@ -45,19 +45,22 @@ const HomePage = () => {
       img: "src/assets/orange.svg",
       name: "orange snaekers",
       price: 59000,
-      id: 1
+      id: 1,
+      Qty: 0
     },
     {
       img: "src/assets/cardshoe.svg",
       name: "white snaekers",
       price: 44000,
-      id: 2
+      id: 2,
+      Qty: 0
     },
     {
       img: "src/assets/orange.svg",
       name: "orange snaekers",
       price: 30000,
-      id: 3
+      id: 3,
+      Qty: 0
     },
   ];
 
@@ -177,7 +180,7 @@ const HomePage = () => {
           ) : (
             product.map((e, i) => (
               <div className="ProductCardMain" key={i}>
-                <div className="productCardImgSec" onClick={()=>nav('/details')}>
+                <div className="productCardImgSec" onClick={()=>nav(`/details/${e.id}`)}>
                   <img src={e.img} alt="" />
                 </div>
                 <div className="productCardTextSec">
