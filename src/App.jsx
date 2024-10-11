@@ -5,16 +5,24 @@ import Details from './components/Pages/Details/Details'
 import Order from './components/Pages/Order/Order'
 import AdminLogin from './components/auth/AdminLogin/AdminLogin'
 import Cart from './components/Pages/Cart/Cart'
-import AdminResetPassword from './components/auth/AdminResetPassword/AdminResetPassword'
-import AdminUpdatePassword from './components/auth/AdminUpdatePassword/AdminUpdatePassword'
-import AdminAdd from './components/Pages/AdminAdd/AdminAdd'
+import ForgotPassword from './components/auth/ForgotPassword/ForgotPassword'
+import ResetPassword from './components/auth/ResetPassword/ResetPassword'
+import AddItem from './components/Pages/AddItem/AddItem'
+
 
 const router = createHashRouter([
 
   {
     path: "/",
     element: <LandingPage/>,
-    // children: 
+  },
+  {
+    path: "/forgot",
+    element: <ForgotPassword/>
+  },
+  {
+    path: "/reset",
+    element: <ResetPassword/>
   },
   {
     path: "/admin-login",
@@ -29,6 +37,9 @@ const router = createHashRouter([
   //   element: <AdminUpdatePassword/>
   // },
   {
+    path: "/add-item",
+    element: <AddItem/>
+  },
     path:"/details/:id",
     element: <Details/>
   },

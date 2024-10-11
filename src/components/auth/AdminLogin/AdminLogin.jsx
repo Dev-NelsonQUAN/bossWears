@@ -1,18 +1,22 @@
 import React from "react";
 import "./AdminLogin.css";
 import Header from "../../Pages/Header/Header";
+import { useNavigate } from "react-router";
 
 const AdminLogin = () => {
+  const Nav = useNavigate()
   return (
     <div className="adminLoginHolder">
       <Header />
 
-      <div className="adLogBottom">
+      <form className="adLogBottom"
+        
+      >
         <div className="topTxt">
-          <h1 className="welcomeAdminText">
+          <label className="welcomeAdminText">
             {" "}
             Welcome to Admin <br /> Control Panel
-          </h1>
+          </label>
 
           <p className="loginP"> Login </p>
         </div>
@@ -39,11 +43,13 @@ const AdminLogin = () => {
           </div>
 
           <div className="logBtnATxt">
-            <p className="fPass"> Forgot Password? </p>
-            <button className="loginB"> Login </button>
+            <p className="fPass" onClick={() => Nav("/forgot")}> Forgot Password? </p>
+            <button className="loginB" 
+              type="submit"
+            > Login </button>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
