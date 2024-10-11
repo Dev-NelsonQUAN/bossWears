@@ -10,7 +10,6 @@ import { decreaseQty, increaseQty, removeCart } from '../../../Global/slice'
 const Cart = () => {
   const Nav = useNavigate()
   const cart = useSelector((state)=>state.shoes.cart)
-  console.log(cart)
   const dispatch = useDispatch()
   const total = useSelector((state) =>state.shoes.cart.reduce((p, e) => p + e.Qty * e.price, 0));
   const all = (total.toLocaleString())

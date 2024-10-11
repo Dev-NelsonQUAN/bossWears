@@ -62,6 +62,13 @@ const HomePage = () => {
       id: 3,
       Qty: 0
     },
+    {
+      img: "src/assets/cardshoe.svg",
+      name: "white snaekers",
+      price: 44000,
+      id: 4,
+      Qty: 0
+    }
   ];
 
   const [loading, setLoading] = useState(true);
