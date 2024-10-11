@@ -9,6 +9,7 @@ import ForgotPassword from './components/auth/ForgotPassword/ForgotPassword'
 import ResetPassword from './components/auth/ResetPassword/ResetPassword'
 import AddItem from './components/Pages/AddItem/AddItem'
 
+
 const router = createHashRouter([
 
   {
@@ -27,12 +28,19 @@ const router = createHashRouter([
     path: "/admin-login",
     element: <AdminLogin/>
   },
+  // {
+  //   path: "/admin-resetpassword",
+  //   element: <AdminResetPassword/>
+  // },
+  // {
+  //   path: "/admin-updatepassword",
+  //   element: <AdminUpdatePassword/>
+  // },
   {
     path: "/add-item",
     element: <AddItem/>
   },
-  {
-    path:"/details",
+    path:"/details/:id",
     element: <Details/>
   },
   {
@@ -42,6 +50,10 @@ const router = createHashRouter([
   {
     path: "/cart",
     element: <Cart/>
+  },
+  {
+    path: "/admin-add",
+    element: <AdminAdd/>
   },
 ])
 

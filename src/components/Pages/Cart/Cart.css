@@ -2,15 +2,97 @@
   min-height: 100vh;
   width: 100%;
   height: auto;
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
-.cartHeadBox {
-  height: 10vh;
+.cartBodyWrapper {
+  height: 80vh;
+  /* background-color: red; */
   width: 100%;
+}
+
+.cartPayBoxBottom {
+  height: 20vh;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.cartCardBodyWrapper {
+  height: 61vh;
   background-color: white;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+  overflow-y: auto;
+}
+
+.cartCard {
+  min-height: 120px;
+  width: 100%;
+  /* background-color: aqua; */
+  border-radius: 5px;
+  border-bottom: 1px solid gray;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+}
+
+.cartPayDetailsBox {
+  height: 60%;
+  background-color: yellow;
+}
+
+.cartPayBtnBox {
+  height: 40%;
+  /* background-color: green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 19px;
+  }
+}
+
+.cartCardDetailsWrapper {
+  /* background-color: red; */
+  display: flex;
+  width: 200px;
+  gap: 10px;
+  align-items: center;
+}
+
+.cartcardDetailsBox {
+  height: 100%;
+  /* background-color: red; */
+
+  h2 {
+    color: lightseagreen;
+  }
+}
+
+.cartCardImgBox {
+  height: 80px;
+  width: 80px;
+  background-color: lightgray;
+  border-radius: 10px;
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
 }

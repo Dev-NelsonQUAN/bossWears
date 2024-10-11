@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './DetailsModal.css'
 import 'animate.css';
 import { IoCloseOutline } from 'react-icons/io5';
-import check from '../../assets/checkmark.svg'
+import check from '../../../assets/checkmark.svg'
 import { useNavigate } from 'react-router';
 
 
