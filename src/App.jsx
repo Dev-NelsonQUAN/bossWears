@@ -7,6 +7,7 @@ import AdminLogin from './components/auth/AdminLogin/AdminLogin'
 import Cart from './components/Pages/Cart/Cart'
 import AdminResetPassword from './components/auth/AdminResetPassword/AdminResetPassword'
 import AdminUpdatePassword from './components/auth/AdminUpdatePassword/AdminUpdatePassword'
+import AdminAdd from './components/Pages/AdminAdd/AdminAdd'
 
 const router = createHashRouter([
 
@@ -38,6 +39,10 @@ const router = createHashRouter([
   {
     path: "/cart",
     element: <Cart/>
+  },
+  {
+    path: "/admin-add",
+    element: <AdminAdd/>
   },
 ])
 
