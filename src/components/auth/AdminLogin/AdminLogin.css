@@ -29,6 +29,7 @@
   color: #0c1a30;
   line-height: 42px;
   font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .loginP {
@@ -70,7 +71,7 @@
   width: 100%;
   min-height: 65%;
   border-radius: 5px;
-  border: 1px solid rgb(15, 15, 15);
+  border: 1px solid rgb(7, 7, 7);
   padding-left: 8px;
 }
 

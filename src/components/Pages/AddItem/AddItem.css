@@ -1,0 +1,191 @@
+.addItemsHolder {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background: green;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 30%;
+  font-family: "Poppins", sans-serif;
+  /* overflow-y: scroll; */
+}
+
+.addItemBottom {
+  width: 90%;
+  min-height: 100vh;
+  height: auto;
+  background: #883f3f;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.addItemsText {
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+
+.shoeNameDescDiv {
+  width: 100%; 
+  min-height: 120vh;
+  height: auto;
+  background: orangered;
+}  
+
+.shoeTopInputs {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background: hotpink;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputShoeNameDiv{
+ width: 100%;
+ height: 12vh; 
+ background: crimson;
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+}
+
+.shoeNameInp {
+  width: 100%;
+  height: 3rem;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.inputShoeDesc {
+  width: 100%;
+  height: 10vh;
+  background: rgb(9, 12, 184);
+  
+}
+
+
+
+.footer {
+  width: 100%;
+  height: 9vh;
+  background: rgb(73, 209, 73);
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+  border-top: 1px solid grey;
+  font-family:"Poppins", sans-serif
+}
+
+.footerInner {
+  width: 90%;
+  height: 100%;
+  background: #b55858;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* .addItemBottom {
+  width: 90%;
+  min-height: 86vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addItemsText {
+  font-size: 1.7rem;
+  font-weight: 100;
+}
+
+.shoeNameDescDiv {
+  width: 100%;
+  min-height: 80vh;
+  height: auto;
+  background: crimson;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.shoeTopInputs {
+  width: 100%;
+  min-height: 67vh;
+  height: auto;
+  background: orangered;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputShoeNameDiv {
+  width: 100%;
+  height: 11vh;
+  background: rgb(30, 209, 30);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shoeName {
+  font-size: 1.2rem;
+}
+
+.shoeName {
+  width: 100%;
+  height: 4rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+}
+
+.inputShoeDesc {
+  width: 100%;
+  height: 25vh;
+  background: yellowgreen;
+}
+
+.shoeDesc {
+  font-size: 1.2rem;
+}
+
+.shoeDescInp {
+    width: 100%;
+    height: 5rem;
+    border: 1px solid black;
+    border-radius: 5px
+}
+
+.selectShoeCat {
+  width: 100%;
+  height: 18vh;
+  background: whitesmoke;
+}
+
+.select {
+  width: 100%;
+  height: 2.5rem;
+  color: #d30707;
+  padding: 5px;
+}
+
+.shoeAddBtn {
+  width: 100%;
+  height: 3rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background: #0c1a30;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+} */
