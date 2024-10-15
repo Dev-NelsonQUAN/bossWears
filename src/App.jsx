@@ -8,6 +8,7 @@ import Cart from './components/Pages/Cart/Cart'
 import ForgotPassword from './components/auth/ForgotPassword/ForgotPassword'
 import ResetPassword from './components/auth/ResetPassword/ResetPassword'
 import AddItem from './components/Pages/AddItem/AddItem'
+import AdminResetPassword from './components/auth/AdminResetPassword/AdminResetPassword'
 
 const router = createHashRouter([
   {
@@ -42,6 +43,7 @@ const router = createHashRouter([
     path: "/cart",
     element: <Cart />
   }
+ 
 ])
 
 const App = () => {
