@@ -73,6 +73,7 @@
   border-radius: 5px;
   border: 1px solid rgb(7, 7, 7);
   padding-left: 8px;
+  outline: none;
 }
 
 .logPasswordHold {
@@ -89,12 +90,25 @@
   font-weight: 600;
 }
 
-.logInput {
+.innerPassW {
+  display: flex;
+  align-items: center;
+  /* justify-content: ; */
   width: 100%;
   min-height: 65%;
   border-radius: 5px;
   border: 1px solid rgb(7, 7, 7);
-  padding-left: 8px;
+  padding: 8px;
+}
+
+.logInputP {
+  width: 100%;
+  min-height: 65%;
+  border: none;
+  outline: none;
+  /* border-radius: 5px;
+  border: 1px solid rgb(7, 7, 7);
+  padding-left: 8px; */
 }
 
 .logBtnATxt {

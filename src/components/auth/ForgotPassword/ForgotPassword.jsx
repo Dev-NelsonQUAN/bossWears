@@ -6,6 +6,12 @@ import { useNavigate } from "react-router";
 const ForgotPassword = () => {
   const Nav = useNavigate();
 
+  const handleForgotPassword = async(e) => {
+    e.preventDefault()
+
+    
+  }
+
   return (
     <div className="ForgotPHolder">
       <Header />

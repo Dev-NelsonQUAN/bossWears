@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ResetPassword.css";
 import Header from "../../Pages/Header/Header";
+import { FaRegEye } from "react-icons/fa";
+import { FaRegEyeSlash } from "react-icons/fa6";
 
 const ResetPassword = () => {
+  const [newPassword, setNewPassword] = useState()
+  const [confirmPassword, setConfirmPassword] = useState()
+  const [seeNewPassword, setSeeNewPassword] = useState(false)
+  const [seeConfirmPassword, setSeeConfirmPassword] = useState(false)
+
+
+  const handleChangePassword =async(e) => {
+    e.preventDefault()
+    
+  }
+
+  const showTheNewPassword = () => {
+    setSeeNewPassword(true)
+  }
+
+  const showTheConfirmPassword = () => {
+    setSeeConfirmPassword(true)
+  }
+
+
   return (
     <div className="resetPassHolder">
       <Header />
@@ -20,20 +42,46 @@ const ResetPassword = () => {
           <div className="resInputs">
             <div className="resetEmailHold">
               <p className="resetEmail"> New Password </p>
-              <input
-                className="resInput"
-                type="text"
-                placeholder="Enter Email Address"
-              />
+              <div className="resNPDiv">
+                <input
+                  type={seeNewPassword ? "text" : "password"}
+                  className="resInputOne"
+                  placeholder="Enter New Password"
+                />
+
+                {
+                  seeNewPassword 
+                  ?
+                  <FaRegEye onClick={() => {
+                    setSeeNewPassword(false)
+                  }} />
+                  : 
+                  <FaRegEyeSlash onClick={showTheNewPassword}/>
+                }
+              </div>
             </div>
 
             <div className="resPasswordHold">
               <p className="resPassword"> Confirm New Password </p>
-              <input
-                className="resInput"
-                type="text"
-                placeholder="Enter Your password"
-              />
+              <div className="resCPDiv">
+                <input
+                  type={ seeConfirmPassword ? "text" : "password"}
+                  className="resInputTwo"
+                  placeholder="Confirm Your password"
+                />
+
+                {
+                  seeConfirmPassword
+                  ?
+                  <FaRegEye onClick={() => {
+                    setSeeConfirmPassword(false)
+                  }}/>
+                  : 
+                  <FaRegEyeSlash onClick={showTheConfirmPassword}/>
+                }
+
+              </div>
+
             </div>
           </div>
 
