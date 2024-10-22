@@ -30,8 +30,9 @@
 
 .shoeNameDescDiv {
   width: 100%;
-  min-height: 138vh;
-  height: auto;
+  /* min-height: 138vh; */
+  margin-bottom: 100px;
+  height: max-content;
   /* background: orangered; */
 }
 
@@ -75,6 +76,13 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: contain;
+  }
 }
 
 .uploadImg {

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import toast from "react-hot-toast";
-import axios from "axios";
+// import axios from "axios";
 
 // https://boss-wear.onrender.com
 
