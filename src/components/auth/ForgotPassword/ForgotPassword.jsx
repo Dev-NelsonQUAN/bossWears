@@ -2,21 +2,42 @@ import React from "react";
 import "./ForgotPassword.css";
 import Header from "../../Pages/Header/Header";
 import { useNavigate } from "react-router";
+import axios from "axios";
 
 const ForgotPassword = () => {
   const Nav = useNavigate();
 
-  const handleForgotPassword = async(e) => {
+  const [email, setEmail] = useState()
+  const [loading, setLoading] = useState()
+
+  const handleForgotPassword = async (e) => {
     e.preventDefault()
 
-    
+    if (!email) {
+      toast.error("Pls kindly enter your email")
+    } else {
+      const apiData = { email }
+      const url = "https://boss-wear.onrender.com/api/v1"
+
+      try {
+        setLoading(true)
+        const res = await axios.post(`${url}/forgot`, apiData)
+      }
+      catch (err) {
+        console.log(err)
+      }
+    }
+
+
   }
 
   return (
     <div className="ForgotPHolder">
       <Header />
 
-      <form className="forgotDown">
+      <form className="forgotDown"
+        onSubmit={handleForgotPassword}
+      >
         <div className="fDownTxt">
           <label className="fResetText"> Reset Password</label>
 
@@ -39,7 +60,9 @@ const ForgotPassword = () => {
           </div>
 
           <div className="fPBtnATxt">
-            <button className="resetPBtn" onClick={() => Nav("/reset")}>
+            <button className="resetPBtn" 
+            type="submit"
+            onClick={() => Nav("/reset")}>
               {" "}
               Reset Password{" "}
             </button>

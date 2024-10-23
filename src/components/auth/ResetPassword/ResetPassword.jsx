@@ -12,7 +12,11 @@ const ResetPassword = () => {
 
 
   const handleChangePassword =async(e) => {
-    e.preventDefault()
+    e.preventDefault();
+
+    // if(!email || !password){
+    //   toast.error("Please fill in your enail")
+    // }
     
   }
 
