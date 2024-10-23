@@ -17,6 +17,8 @@ import axios from "axios";
 
 const HomePage = () => {
   const dispatch = useDispatch()
+  const [loading, setLoading] = useState(true);
+  const [errMessage, setErrMessage] = useState()
   const cards = [
     {
       title: "Explore Casual Comfort",
@@ -73,15 +75,6 @@ const HomePage = () => {
   ];
   const [data, setData] = useState([])
 
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate a data fetching
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000); // 2 seconds loading time
-  }, []);
-
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -91,6 +84,7 @@ const HomePage = () => {
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, [cards.length]);
+  
 
   const nav = useNavigate()
 
@@ -105,8 +99,13 @@ const HomePage = () => {
       console.log(res?.data?.data)
       setData(res?.data?.data)
       console.log(data, "this is it")
+      setLoading(false)
     } catch (error) {
-      console.log("this is the error",error)
+      const err = error?.message
+      // console.log(err, "this")
+      setErrMessage(err)
+      console.log(errMessage)
+      setLoading(false)
     }
   }
 
@@ -205,7 +204,7 @@ const HomePage = () => {
           ) : (
             data.map((e, i) => (
               <div className="ProductCardMain" key={i}>
-                <div className="productCardImgSec" onClick={()=>nav(`/details/${e.id}`)}>
+                <div className="productCardImgSec" onClick={()=>nav(`/details/${e._id}`)}>
                   <img src={e.shoeImage} alt="" />
                 </div>
                 <div className="productCardTextSec">
@@ -216,6 +215,7 @@ const HomePage = () => {
               </div>
             ))
           )}
+          {errMessage && <div>{errMessage}</div>}
         </div>
 
         <div className="categoryBoxhead">
@@ -232,7 +232,7 @@ const HomePage = () => {
           ) : (
             data.map((e, i) => (
               <div className="ProductCardMain" key={i}>
-                <div className="productCardImgSec" onClick={()=>nav(`/details/${e.id}`)}>
+                <div className="productCardImgSec" onClick={()=>nav(`/details/${e._id}`)}>
                   <img src={e.shoeImage} alt="" />
                 </div>
                 <div className="productCardTextSec">
@@ -243,6 +243,7 @@ const HomePage = () => {
               </div>
             ))
           )}
+          {errMessage && <div>{errMessage}</div>}
         </div>
 
         {loading ? (
@@ -278,7 +279,7 @@ const HomePage = () => {
           ) : (
             data.map((e, i) => (
               <div className="ProductCardMain" key={i}>
-                <div className="productCardImgSec" onClick={()=>nav(`/details/${e.id}`)}>
+                <div className="productCardImgSec" onClick={()=>nav(`/details/${e._id}`)}>
                   <img src={e.shoeImage} alt="" />
                 </div>
                 <div className="productCardTextSec">
@@ -289,6 +290,7 @@ const HomePage = () => {
               </div>
             ))
           )}
+          {errMessage && <div>{errMessage}</div>}
         </div>
         <div className="categoryBoxhead">
           <div>Special Offers</div>
@@ -304,7 +306,7 @@ const HomePage = () => {
           ) : (
             data.map((e, i) => (
               <div className="ProductCardMain" key={i}>
-                <div className="productCardImgSec" onClick={()=>nav(`/details/${e.id}`)}>
+                <div className="productCardImgSec" onClick={()=>nav(`/details/${e._id}`)}>
                   <img src={e.shoeImage} alt="" />
                 </div>
                 <div className="productCardTextSec">
@@ -315,6 +317,7 @@ const HomePage = () => {
               </div>
             ))
           )}
+          {errMessage && <div>{errMessage}</div>}
         </div>
       </div>
     </div>

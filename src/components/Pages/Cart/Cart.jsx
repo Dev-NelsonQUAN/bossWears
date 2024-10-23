@@ -36,11 +36,11 @@ const Cart = () => {
                     <div className="cartCard">
                       <div className='cartCardDetailsWrapper'>
                         <div className='cartCardImgBox'>
-                          <img src={e.img} alt="" />
+                          <img src={e.shoeImage} alt="" />
                         </div>
                         <div className='cartcardDetailsBox'>
                           <h2>₦{now.toLocaleString()}</h2>
-                          <h3>{e.name}</h3>
+                          <h3>{e.shoeName}</h3>
                         </div>
                       </div>
 
