@@ -4,7 +4,7 @@ import Header from "../../Pages/Header/Header";
 import { useNavigate } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
-import axios from "axios
+import axios from "axios";
 
 const AdminLogin = () => {
   const Nav = useNavigate();
