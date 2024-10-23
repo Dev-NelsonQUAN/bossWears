@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Details.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoHeart } from "react-icons/io5";
@@ -6,36 +6,37 @@ import ShoePeru from "../../../assets/shoePeru.svg";
 import { useNavigate, useParams } from "react-router";
 import { useDispatch } from "react-redux";
 import { decreaseQty, increaseQty } from "../../../Global/slice";
+import axios from "axios";
 
 const Details = () => {
   const {id} = useParams()
   const dispatch = useDispatch()
+  const [data, setData] = useState([])
 
-  const product = [
-    {
-      img: "src/assets/orange.svg",
-      name: "orange snaekers",
-      price: 59000,
-      id: 1,
-      Qty: 0
-    },
-    {
-      img: "src/assets/cardshoe.svg",
-      name: "white snaekers",
-      price: 44000,
-      id: 2,
-      Qty: 0
-    },
-    {
-      img: "src/assets/orange.svg",
-      name: "orange snaekers",
-      price: 30000,
-      id: 3,
-      Qty: 0
-    },
-  ];
-  const filter = product.filter(e=>e.id == id)
-  const data = filter[0]
+  useEffect(()=>{
+    fetchProduct()
+  }, [])
+
+  const fetchProduct = async () =>{
+    try {
+      const url = 'https://boss-wear-t7uu.onrender.com/api/v1/shoe/feature'
+      const res = await axios.get(url)
+      console.log(res?.data?.data)
+      setData(res?.data?.data)
+      console.log(data, "this is it")
+      setLoading(false)
+    } catch (error) {
+      const err = error?.message
+      // console.log(err, "this")
+      setErrMessage(err)
+      console.log(errMessage)
+      setLoading(false)
+    }
+  }
+
+  const filter = data?.filter(e=>e?._id == id)
+  const shoe = filter[0]
+  console.log(shoe)
 
   const Nav = useNavigate();
   return (
@@ -45,7 +46,7 @@ const Details = () => {
           <IoIosArrowBack
             size="25"
             className="arrowLeft"
-            onClick={() => Nav("/")}
+            onClick={() => Nav(-1)}
           />
 
           <h4 className="pDetails" onClick={() => Nav("/admin-login")}> Product Details </h4>
@@ -54,13 +55,18 @@ const Details = () => {
 
       <div className="detailsMid">
         <div className="dMidTop">
-          <img src={data.img} alt="" className="ImgHold" />
+          {shoe && <img src={shoe.shoeImage} alt="" className="ImgHold" />}
+          
         </div>
 
         <div className="dMidBottom">
           <div className="holdHeadTxt">
-            <h2 className="footName">{data.name}</h2>
-            <p className="footiesPrice"> ₦{data.price.toLocaleString()}.00 </p>
+            {shoe && 
+            <>
+              <h2 className="footName">{shoe.shoeName}</h2>
+              <p className="footiesPrice"> ₦{shoe.price.toLocaleString()}.00 </p>
+            </>
+            }
           </div>
 
           <div className="holdBottomTxt">
@@ -83,9 +89,13 @@ const Details = () => {
           <div className="quantity">
             <p className="rQuant"> Quantity </p>
             <div className="holdCount">
-                <p className="sub" onClick={()=>dispatch(decreaseQty(data))}> - </p>
-                <p className="count"> {data.Qty} </p>
-                <p className="add" onClick={()=>dispatch(increaseQty(data))}> + </p>
+              {
+                shoe && <>
+                  <p className="sub" onClick={()=>dispatch(decreaseQty(shoe))}> - </p>
+                  <p className="count"> {shoe.Qty} </p>
+                  <p className="add" onClick={()=>dispatch(increaseQty(shoe))}> + </p>
+                </>
+              }
             </div>
           </div>
           <div className="colorHold">
@@ -98,7 +108,7 @@ const Details = () => {
           </div>
           <div className="totalP">
             <p className="bottomTot"> Total </p>
-            <p className="bottomPri"> ₦{data.price.toLocaleString()}.00  </p>
+            {shoe && <p className="bottomPri"> ₦{shoe.price.toLocaleString()}.00  </p>}
           </div>
         </div>
       </div>

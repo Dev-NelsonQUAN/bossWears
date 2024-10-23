@@ -8,7 +8,7 @@ const cartSlice = createSlice({
   },
   reducers: {
     addToCart: (state, {payload})=>{
-      const check = state.cart.findIndex((e) => e.id === payload.id);
+      const check = state.cart.findIndex((e) => e._id === payload._id);
       if (check >= 0) {
         state.cart[check].Qty += 1
       } else {
@@ -17,11 +17,11 @@ const cartSlice = createSlice({
       }
     },
     removeCart: (state, { payload }) => {
-      state.cart = state.cart.filter((e) => e.id !== payload.id);
+      state.cart = state.cart.filter((e) => e._id !== payload._id);
     },
     decreaseQty: (state, { payload }) => {
       let newCart = state.cart.map((e) => {
-        if (e.id === payload.id) {
+        if (e._id === payload._id) {
           return { ...e, Qty: e.Qty - 1 };
         } else {
           return e;
@@ -32,7 +32,7 @@ const cartSlice = createSlice({
     },
     increaseQty: (state, { payload }) => {
       const array = state.cart.map((e) => {
-        if (e.id === payload.id) {
+        if (e._id === payload._id) {
           e.Qty += 1;
           return e;
         } else {

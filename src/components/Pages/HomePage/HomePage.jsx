@@ -13,9 +13,12 @@ import CardLoading from "../../Extra/CardLoading";
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../Global/slice";
+import axios from "axios";
 
 const HomePage = () => {
   const dispatch = useDispatch()
+  const [loading, setLoading] = useState(true);
+  const [errMessage, setErrMessage] = useState()
   const cards = [
     {
       title: "Explore Casual Comfort",
@@ -70,15 +73,7 @@ const HomePage = () => {
       Qty: 0
     }
   ];
-
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate a data fetching
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000); // 2 seconds loading time
-  }, []);
+  const [data, setData] = useState([])
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -89,8 +84,30 @@ const HomePage = () => {
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, [cards.length]);
+  
 
   const nav = useNavigate()
+
+  useEffect(()=>{
+    fetchProduct()
+  }, [])
+
+  const fetchProduct = async () =>{
+    try {
+      const url = 'https://boss-wear-t7uu.onrender.com/api/v1/shoe/feature'
+      const res = await axios.get(url)
+      console.log(res?.data?.data)
+      setData(res?.data?.data)
+      console.log(data, "this is it")
+      setLoading(false)
+    } catch (error) {
+      const err = error?.message
+      // console.log(err, "this")
+      setErrMessage(err)
+      console.log(errMessage)
+      setLoading(false)
+    }
+  }
 
   return (
     <div className="homeHold">
@@ -185,19 +202,20 @@ const HomePage = () => {
               <CardLoading />
             </>
           ) : (
-            product.map((e, i) => (
+            data.map((e, i) => (
               <div className="ProductCardMain" key={i}>
-                <div className="productCardImgSec" onClick={()=>nav(`/details/${e.id}`)}>
-                  <img src={e.img} alt="" />
+                <div className="productCardImgSec" onClick={()=>nav(`/details/${e._id}`)}>
+                  <img src={e.shoeImage} alt="" />
                 </div>
                 <div className="productCardTextSec">
-                  <div className="productCardProductName">{e.name}</div>
+                  <div className="productCardProductName">{e.shoeName}</div>
                   <div className="productCardProductAmount">₦{e.price.toLocaleString()}.00</div>
                   <button className="addToCartBtn" onClick={()=>dispatch(addToCart(e))}>Add to cart</button>
                 </div>
               </div>
             ))
           )}
+          {errMessage && <div>{errMessage}</div>}
         </div>
 
         <div className="categoryBoxhead">
@@ -212,19 +230,20 @@ const HomePage = () => {
               <CardLoading />
             </>
           ) : (
-            product.map((e, i) => (
+            data.map((e, i) => (
               <div className="ProductCardMain" key={i}>
-                <div className="productCardImgSec" onClick={()=>nav('/details')}>
-                  <img src={e.img} alt="" />
+                <div className="productCardImgSec" onClick={()=>nav(`/details/${e._id}`)}>
+                  <img src={e.shoeImage} alt="" />
                 </div>
                 <div className="productCardTextSec">
-                  <div className="productCardProductName">{e.name}</div>
-                  <div className="productCardProductAmount">₦{e.price}.00</div>
-                  <button className="addToCartBtn">Add to cart</button>
+                  <div className="productCardProductName">{e.shoeName}</div>
+                  <div className="productCardProductAmount">₦{e.price.toLocaleString()}.00</div>
+                  <button className="addToCartBtn" onClick={()=>dispatch(addToCart(e))}>Add to cart</button>
                 </div>
               </div>
             ))
           )}
+          {errMessage && <div>{errMessage}</div>}
         </div>
 
         {loading ? (
@@ -258,19 +277,20 @@ const HomePage = () => {
               <CardLoading />
             </>
           ) : (
-            product.map((e, i) => (
+            data.map((e, i) => (
               <div className="ProductCardMain" key={i}>
-                <div className="productCardImgSec" onClick={()=>nav('/details')}>
-                  <img src={e.img} alt="" />
+                <div className="productCardImgSec" onClick={()=>nav(`/details/${e._id}`)}>
+                  <img src={e.shoeImage} alt="" />
                 </div>
                 <div className="productCardTextSec">
-                  <div className="productCardProductName">{e.name}</div>
-                  <div className="productCardProductAmount">₦{e.price}.00</div>
-                  <button className="addToCartBtn">Add to cart</button>
+                  <div className="productCardProductName">{e.shoeName}</div>
+                  <div className="productCardProductAmount">₦{e.price.toLocaleString()}.00</div>
+                  <button className="addToCartBtn" onClick={()=>dispatch(addToCart(e))}>Add to cart</button>
                 </div>
               </div>
             ))
           )}
+          {errMessage && <div>{errMessage}</div>}
         </div>
         <div className="categoryBoxhead">
           <div>Special Offers</div>
@@ -284,19 +304,20 @@ const HomePage = () => {
               <CardLoading />
             </>
           ) : (
-            product.map((e, i) => (
+            data.map((e, i) => (
               <div className="ProductCardMain" key={i}>
-                <div className="productCardImgSec" onClick={()=>nav('/details')}>
-                  <img src={e.img} alt="" />
+                <div className="productCardImgSec" onClick={()=>nav(`/details/${e._id}`)}>
+                  <img src={e.shoeImage} alt="" />
                 </div>
                 <div className="productCardTextSec">
-                  <div className="productCardProductName">{e.name}</div>
-                  <div className="productCardProductAmount">₦{e.price}.00</div>
-                  <button className="addToCartBtn">Add to cart</button>
+                  <div className="productCardProductName">{e.shoeName}</div>
+                  <div className="productCardProductAmount">₦{e.price.toLocaleString()}.00</div>
+                  <button className="addToCartBtn" onClick={()=>dispatch(addToCart(e))}>Add to cart</button>
                 </div>
               </div>
             ))
           )}
+          {errMessage && <div>{errMessage}</div>}
         </div>
       </div>
     </div>
