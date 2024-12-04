@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Footer.css";
 import { GoHome } from "react-icons/go";
 import { RiHeartAddLine } from "react-icons/ri";
@@ -6,8 +6,10 @@ import { BsHandbag } from "react-icons/bs";
 import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import ProductModal from "../../Modal/ProductAddedModal/ProductModal";
 
 const Footer = () => {
+  const [toggle,setToggle] = useState(false)
 
     const Nav = useNavigate()
     const cart = useSelector((state)=>state.shoes.cart.length)
@@ -29,7 +31,7 @@ const Footer = () => {
             <p className="wishList"> Wishlist </p>
           </div>
         </NavLink>
-
+       
         <NavLink to='/cart' className={({ isActive }) =>isActive ? "HeaderActive" : "HeaderNotActive"}>
           <div className="holdOrders">
             <BsHandbag size={26} />

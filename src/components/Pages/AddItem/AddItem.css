@@ -67,6 +67,7 @@
   outline: none;
   border-radius: 5px;
   padding-left: 8px;
+  /* background-color: red; */
 }
 
 .inputImg {
@@ -99,6 +100,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  /* background-color: green; */
 }
 
 .imgUpload {
@@ -158,7 +160,35 @@
     font-size: 1.2rem;
   }
 }
+.card-container{
+  width: 100%;
+  height: auto;
+  /* gap:20px; */
+  /* background-color: green; */
 
+}
+.color-addbtn{
+  width: 100%;
+  height: 40px;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 20px;
+  /* background: #0C1A30; */
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+.color-holder{
+  width: 100%;
+  /* height: 40px; */
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
+  
+
+}
 .holdSize {
   width: 100%;
   height: 12vh;

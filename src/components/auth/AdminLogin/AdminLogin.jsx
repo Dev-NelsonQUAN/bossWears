@@ -23,18 +23,24 @@ const AdminLogin = () => {
     }
 
     const apiData = { email, password };
-    const url = "https://boss-wear-t7uu.onrender.com/login";
+    const url = "https://boss-wear-t7uu.onrender.com/api/v1/login";
 
     try {
       setLoading(true);
       const res = await axios.post(url, apiData);
-      console.log(res);
+      // console.log(res.data.token);
+
+      localStorage.setItem('token', res.data.token)
 
       if (res.status === 200) {
         const { token } = res.data;
         localStorage.setItem("token", token);
         toast.success("Welcome, Admin");
-        Nav("/add-item");
+        setTimeout(() => {
+          Nav("/add-item");
+          
+        }, 3000);
+        
       } else {
         toast.error("Login failed");
       }

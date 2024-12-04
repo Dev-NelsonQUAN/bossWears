@@ -125,6 +125,11 @@
   align-items: center;
 
 }
+.homePageCategoryLittleBox >img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
 
 .heroMainShowCard {
   background-color: #0AA86B;

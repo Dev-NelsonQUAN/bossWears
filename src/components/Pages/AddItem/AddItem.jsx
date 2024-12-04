@@ -7,8 +7,11 @@ import { FaFileImport, FaImage, FaImagePortrait, FaRecycle, FaRegFileImage, FaRe
 import { FaRegImage } from "react-icons/fa";
 import { FcAddImage } from "react-icons/fc";
 import toast, { ToastBar } from "react-hot-toast";
+import axios from "axios";
+import ProductModal from "../../Modal/ProductAddedModal/ProductModal";
+import { useNavigate } from "react-router";
 
-const AddItem = () => {
+const AddItem = ({toggle,setToggle}) => {
 
   const [name, setName] = useState('')
   const [image, setImage] = useState('')
@@ -16,18 +19,25 @@ const AddItem = () => {
   const [category, setCategory] = useState('')
   const [size, setSize] = useState('')
   const [price, setPrice] = useState('')
+  const [discountPrice, setDiscountPrice] = useState('')
+  const [showModal, setShowModal] = useState(true)
 
   const [loading, setLoading] = useState(false)
 
   const [post, setPost] = useState(false)
+  const [colors, setColors] = useState([""])
+
+  const navigate = useNavigate()
 
   const data = {
-    name: name,
-    description: description,
+    shoeName: name,
+    descriptionProduct: description,
     category: category,
-    size: size,
+    sizes: size,
     price: price,
-    image: image,
+    shoeImage: image,
+    discountPrice:discountPrice,
+    colors:colors
   }
 
   const showImg = (e) => {
@@ -37,7 +47,28 @@ const AddItem = () => {
     const img = URL.createObjectURL(file);
     setPost(img)
   };
+
+  
   // console.log(data)
+  const token = localStorage.getItem('token');
+  // console.log(token);
+  
+  const handleColorChange = (index, value) => {
+    const updatedColors = [...colors];
+    updatedColors[index] = value;
+    setColors(updatedColors);
+  };
+
+  // Function to add a new color input field
+  const addColorField = () => {
+    setColors([...colors, ""]);
+  };
+
+  // Function to remove a color field
+  const removeColorField = (index) => {
+    const updatedColors = colors.filter((_, i) => i !== index);
+    setColors(updatedColors);
+  };
 
   const Create = () => {
     if (!name || !description || !category || !size || !price || !image) {
@@ -50,28 +81,39 @@ const AddItem = () => {
     const url = `https://boss-wear-t7uu.onrender.com/api/v1/shoe/uploadshoe`;
 
     // Create FormData object
+    setLoading(true);
     const formData = new FormData();
-    formData.append("name", name);
-    formData.append("description", description);
+    formData.append("shoeName", name);               
+    formData.append("descriptionProduct", description); 
     formData.append("category", category);
-    formData.append("size", size);
-    formData.append("image", image); // Append the file
+    formData.append("sizes", size);                  
+    formData.append("shoeImage", image);             
     formData.append("price", price);
+    formData.append("discount", discountPrice);
+    formData.append("colors", colors);
     console.log(formData);
 
     axios
       .post(url, formData, {
         headers: {
-          "Content-Type": "multipart/form-data"
+          "Content-Type": "multipart/form-data",
+          "Authorization": `Bearer ${token}`,
         },
       })
       .then((res) => {
         console.log(res);
+        setShowModal(true)
+        // setToggle(true)
         // Handle successful response here, e.g., navigating or setting state
         setLoading(false);
+        setTimeout(() => {
+          navigate("/delete-product")
+          setShowModal(false)
+
+        },3000);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response.data.message);
         setLoading(false);
       });
   };
@@ -131,16 +173,60 @@ const AddItem = () => {
               <p className="category"> Category </p>
               <select className="select" onChange={(e)=>setCategory(e.target.value)}>
                 <option value=""> Select Category </option>
-                <option value="timberland"> Timberland </option>
-                <option value="canvas"> Canvas </option>
+                <option value="timberland"> Timberland and boots </option>
+                <option value="canvas"> Palms </option>
                 <option value="sneakers"> Sneakers </option>
                 <option value="sandals"> Sandals </option>
-                <option value="co-operate shoes"> Co-operate Shoes </option>
+                <option value="co-operate shoes"> Coroperate Shoes </option>
                 {/* className="shoeNameInp"
                 type="text"
                 placeholder="Enter the shoe name" */}
               </select>
             </div>
+            {/* <div className="input-section">
+        <input
+          type="text"
+          value={inputColor}
+          placeholder="Enter color"
+          onChange={(e) => setInputColor(e.target.value)}
+          className="color-input"
+        />
+        <button onClick={addColor} className="add-btn" disabled={colors.length >= 3}>
+          Add Color
+        </button>
+      </div> */}
+      <div className="card-container">
+      {colors.map((color, index) => (
+          <div key={index} className="color-holder">
+            <label className="sizeP">Color{index + 1}:</label>
+           <div>
+            
+           </div>
+            <input
+              type="text"
+              value={color}
+              onChange={(e) => handleColorChange(index, e.target.value)}
+              placeholder="Enter color"
+              style={{
+                height:"40px",
+                // margin: "0 10px",
+                padding: "5px",
+                border: "1px solid #ccc",
+                width: "100%",
+              }}
+            />
+            {/* {colors.length > 1 && (
+              <button type="button" onClick={() => removeColorField(index)}>
+                Remove
+              </button>
+            )} */}
+          </div>
+        ))}
+      </div>
+    
+        <button type="button" onClick={addColorField} className="color-addbtn">
+          Add Another Color
+        </button>
 
             <div className="holdSize">
               <p className="sizeP"> Size </p>
@@ -157,8 +243,15 @@ const AddItem = () => {
                 onChange={(e)=>setPrice(e.target.value)}
               />
             </div>
+            <div className="holdPrice">
+              <p className="priceP">  Discount Price </p>
+              <input type="text" className="priceInp"
+                placeholder="₦59,000.00"
+                onChange={(e)=>setDiscountPrice(e.target.value)}
+              />
+            </div>
 
-            <button className="shoeAddBtn" onClick={Create}>Add</button>
+            <button className="shoeAddBtn" onClick={Create}>{!loading? "Add": "loading...."}</button>
 
           </div>
 
@@ -166,22 +259,13 @@ const AddItem = () => {
         </div>
       </div>
 
-      <footer className="footer">
-        <div className="footerInner">
-          <div className="footAddDiv">
-            <GrAddCircle />
-            <p className="footAddItem"> Add Item </p>
-          </div>
-
-          <div className="footDelDiv">
-            <FaRecycle/>
-            <p className="footDelItem"> Delete Item </p>
-          </div>
-        </div>
-      </footer>
-
+     
+      {
+      !showModal? <ProductModal/> : null
+    }
     </div>
     {/* <ToastBar/> */}
+ 
     </>
   );
 };
