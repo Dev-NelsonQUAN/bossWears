@@ -1,18 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Order.css";
 import { IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import DetailsModal from "../../Modal/DetailsModal/DetailsModal";
+import axios from "axios";
 
-const Order = () => {
-    const Nav = useNavigate()
-    const [animate, setAnimate] = useState(false)
+const Order = ({ formData, setFormData }) => {
+  const Nav = useNavigate()
+  console.log("formData in Order:", formData);
+
+
+
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  console.log(formData)
 
   return (
     <div className="orderHolder">
-      {
-        animate ? <DetailsModal animate={animate} setAnimate={setAnimate}/>: null
-      }
       <div className="orderHeader">
         <div className="orderHeaderInner">
           <IoIosArrowBack
@@ -43,6 +50,9 @@ const Order = () => {
                 className="input"
                 type="text"
                 placeholder="Enter your name"
+                name="name"
+                value={formData?.name}
+                onChange={handleChange}
               />
             </div>
 
@@ -52,6 +62,9 @@ const Order = () => {
                 className="input"
                 type="text"
                 placeholder="Enter your address"
+                name="address"
+                value={formData?.address}
+                onChange={handleChange}
               />
             </div>
 
@@ -61,6 +74,9 @@ const Order = () => {
                 className="input"
                 type="text"
                 placeholder="Enter your phone number"
+                name="phoneNumber"
+                value={formData?.phoneNumber}
+                onChange={handleChange}
               />
             </div>
 
@@ -70,24 +86,20 @@ const Order = () => {
                 className="input"
                 type="text"
                 placeholder="Enter your landmark or busstop"
+                name="bustop"
+                value={formData?.bustop}
+                onChange={handleChange}
               />
             </div>
-
-            <div className="altLocDiv">
-              <p className="name"> Alternative Phone Number </p>
-              <input
-                className="input"
-                type="text"
-                placeholder="Enter your name"
-              />
-            </div>
-
             <div className="altPhoneNumDiv">
               <p className="name"> Alternative Phone Number (If any) </p>
               <input
                 className="input"
                 type="text"
                 placeholder="Enter your alternative phone number"
+                name="alternativePhoneNumber"
+                value={formData?.alternativePhoneNumber}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -95,7 +107,7 @@ const Order = () => {
       </div>
 
       <div className="orderFooter">
-        <button className="submitBtn" onClick={()=>setAnimate(true)}> Submit </button>
+        <button className="submitBtn" onClick={() => console.log(formData)}> Submit </button>
       </div>
     </div>
   );
