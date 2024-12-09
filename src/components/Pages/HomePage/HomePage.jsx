@@ -101,7 +101,7 @@ const url = 'https://boss-wear-t7uu.onrender.com/api/v1/shoe'
       const res = await axios.get(url)
       // console.log(res?.data?.data)
       setData(res?.data?.data)
-      console.log(res?.data?.data)
+      // console.log(res?.data?.data)
       // console.log(data, "this is it")
       setLoading(false)
     } catch (error) {
@@ -119,7 +119,7 @@ const url = 'https://boss-wear-t7uu.onrender.com/api/v1/shoe'
       const response = await axios.get(url)
       // console.log(response);
      setArrival(response.data.data);
-     console.log(response.data.data);
+    //  console.log(response.data.data);
       
       
     } catch (error) {
@@ -135,7 +135,7 @@ const url = 'https://boss-wear-t7uu.onrender.com/api/v1/shoe'
 
     try {
       const res = await axios.get(url)
-      console.log(res)
+      // console.log(res)
       setAllCategory(res.data.category);
       
       

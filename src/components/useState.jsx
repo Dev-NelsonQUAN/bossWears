@@ -2,9 +2,13 @@ import React, { useEffect, useState } from 'react'
 import Details from './Pages/Details/Details'
 import Order from './Pages/Order/Order'
 import { useLocation, useNavigate, useParams } from 'react-router'
+import DetailsModal from './Modal/DetailsModal/DetailsModal'
 
 const ToggleComponent = () => {
     const [toggle, setToggle] = useState(0)
+    const [animate, setAnimate] = useState(false)
+    const [loading, setLoading] = useState(false)
+
     const [formData, setFormData] = useState({
         size: "",
         qty: 0,
@@ -16,7 +20,7 @@ const ToggleComponent = () => {
         bustop: "",
         alternativePhoneNumber: ""
     })
-    console.log(formData);
+    // console.log(formData);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -43,33 +47,42 @@ const ToggleComponent = () => {
     }, [location.pathname]);
 
 
+    const order = async(e)=> {
 
-    // const order = async(e)=> {
 
+        // setLoading(true)
 
-    //     setLoading(true)
+        try {
 
-    //     try {
+          const response = await axios.post(`https://boss-wear-t7uu.onrender.com/api/v1/order/placeorder/${shoeId}`,formData)
+          toast.success(response.data.message);
+          console.log(response);
 
-    //       const response = await axios.post(`https://boss-wear-t7uu.onrender.com/api/v1/order/placeorder/${shoeId}`,formData)
-    //       toast.success(response.data.message);
-    //       console.log(response);
+          setLoading(false)
+          setTimeout(() => {
+            // Nav(`/order/${e._id}`)
+          }, 3000);
 
-    //       setLoading(false)
-    //       setTimeout(() => {
-    //         Nav(`/order/${e._id}`)
-    //       }, 3000);
+        } catch (error) {
 
-    //     } catch (error) {
-
-    //       // console.log(error)
-    //       setLoading(false)
-    //     }
-    //   }
+          // console.log(error)
+          setLoading(false)
+        }
+      }
     return (
         <div>
+            {
+                animate ? <DetailsModal setAnimate={setAnimate} animate={animate}/> : null
+            }
+            {
+                toggle ===0 && 
             <Details formData={formData} setFormData={setFormData} />
-            <Order formData={formData} setFormData={setFormData} />
+            }
+             {
+                toggle === 1 && 
+                <Order formData={formData} setFormData={setFormData} setToggle={setToggle} order={order}  loading={loading}/>
+            }
+           
         </div>
     )
 }

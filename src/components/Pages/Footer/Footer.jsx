@@ -24,15 +24,15 @@ const Footer = () => {
             <p className="home"> Home </p>
           </div>
         </NavLink>
-
-        <NavLink to='/admin-login' className={({ isActive }) =>isActive ? "HeaderActive" : "HeaderNotActive"}>
+{/*  */}
+        {/* <NavLink to='/admin-login' className={({ isActive }) =>isActive ? "HeaderActive" : "HeaderNotActive"}> */}
           <div className="holdHeart">
             <RiHeartAddLine size={26} />
             <p className="wishList"> Wishlist </p>
           </div>
-        </NavLink>
+        {/* </NavLink> */}
        
-        <NavLink to='/cart' className={({ isActive }) =>isActive ? "HeaderActive" : "HeaderNotActive"}>
+        {/* <NavLink to='/cart' className={({ isActive }) =>isActive ? "HeaderActive" : "HeaderNotActive"}> */}
           <div className="holdOrders">
             <BsHandbag size={26} />
             {
@@ -41,7 +41,7 @@ const Footer = () => {
             }
             <p className="orders"> Orders </p>
           </div>
-        </NavLink>
+        {/* </NavLink> */}
 
       </div>
     </div>

@@ -63,11 +63,11 @@ const App = () => {
    
     {
       path: "/details/:shoeId",
-      element: <Details/>
+      element: <ToggleComponent/>
     },
     {
       path: "/order",
-      element: <Order/>
+      element: <ToggleComponent/>
     },
     {
       path: "/cart",

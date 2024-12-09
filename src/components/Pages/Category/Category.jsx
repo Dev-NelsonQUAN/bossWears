@@ -60,9 +60,8 @@ https://boss-wear-t7uu.onrender.com/api/v1/shoe/categoryShoe/${categoryId }`)
     //     nav(`/category/${categoryId}`);
     //   };
       const otherCatego = allCategory.filter((cat) => cat._id !== categoryId);
-// setOtherCategories(otherCatego)
-      // console.log(categoryId);
-      console.log(otherCatego)
+
+
       const handleCategoryClick = (categoryId) => {
         nav(`/category/${categoryId}`); // Navigate to the clicked category
         setSelectedCategory(categoryId); // Update the selected category

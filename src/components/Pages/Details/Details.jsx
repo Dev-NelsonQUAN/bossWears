@@ -9,7 +9,7 @@ import { decreaseQty, increaseQty } from "../../../Global/slice";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
-const Details = ({ formData, setFormData, setToggle }) => {
+const Details = ({ formData, setFormData }) => {
   const { shoeId, orderId } = useParams()
   const dispatch = useDispatch()
   const [data, setData] = useState([])
@@ -28,7 +28,7 @@ const Details = ({ formData, setFormData, setToggle }) => {
   useEffect(() => {
     fetchProduct()
   }, [])
-
+// console.log(formData)
 
   const fetchProduct = async () => {
     try {
@@ -69,7 +69,7 @@ const Details = ({ formData, setFormData, setToggle }) => {
       alert("All details are required to order");
       return;
     }
-    setToggle(1)
+Nav("/order")
 
   }
 
@@ -130,7 +130,9 @@ const Details = ({ formData, setFormData, setToggle }) => {
           </div>
           <div className="quantity">
             <p className="rQuant"> Quantity </p>
-            <input type="number" name="qty" value={formData.qty} onChange={handleChange} />
+            <input type="number" name="qty" 
+            value={formData.qty}
+             onChange={handleChange} />
             <div className="holdCount">
               {
                 data && <>
@@ -143,14 +145,18 @@ const Details = ({ formData, setFormData, setToggle }) => {
           </div>
           <div className="quantity">
             <p className="rQuant"> size </p>
-            <input type="text" placeholder="43-45" className="detail-size-input" value={formData.size} name="size" onChange={handleChange} />
+            <input type="text" placeholder="43-45" className="detail-size-input"
+             value={formData.size}
+              name="size" onChange={handleChange} />
 
           </div>
           <div className="colorHold">
             <p className="colColor"> Color</p>
             <div className="holdColorBtn">
               {data && data.colors && data.colors.length > 0 ? (
-                <select className="color-dropdown" value={formData.color} name="color" onChange={handleChange}>
+                <select className="color-dropdown" 
+                value={formData.color} name="color" 
+                onChange={handleChange}>
                   <option value="">Select Color</option>
                   {data.colors[0].split(',').map((color, index) => (
                     <option key={index} value={color.trim()}>

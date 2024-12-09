@@ -5,9 +5,9 @@ import { useNavigate, useParams } from "react-router";
 import DetailsModal from "../../Modal/DetailsModal/DetailsModal";
 import axios from "axios";
 
-const Order = ({ formData, setFormData }) => {
+const Order = ({ formData, setFormData,setToggle,order,loading}) => {
   const Nav = useNavigate()
-  console.log("formData in Order:", formData);
+  // console.log("formData in Order:", formData);
 
 
 
@@ -16,7 +16,7 @@ const Order = ({ formData, setFormData }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  console.log(formData)
+  // console.log(formData)
 
   return (
     <div className="orderHolder">
@@ -25,7 +25,7 @@ const Order = ({ formData, setFormData }) => {
           <IoIosArrowBack
             size="25"
             className="arrowLeft"
-            onClick={() => Nav(-1)}
+            onClick={() => setToggle(0)}
           />
 
           <h6 className="orderName">Order Selection</h6>
@@ -91,7 +91,7 @@ const Order = ({ formData, setFormData }) => {
                 onChange={handleChange}
               />
             </div>
-            <div className="altPhoneNumDiv">
+            {/* <div className="altPhoneNumDiv">
               <p className="name"> Alternative Phone Number (If any) </p>
               <input
                 className="input"
@@ -101,13 +101,13 @@ const Order = ({ formData, setFormData }) => {
                 value={formData?.alternativePhoneNumber}
                 onChange={handleChange}
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
 
       <div className="orderFooter">
-        <button className="submitBtn" onClick={() => console.log(formData)}> Submit </button>
+        <button className="submitBtn" onClick={order}>{loading? "loading...": Submit}</button>
       </div>
     </div>
   );
